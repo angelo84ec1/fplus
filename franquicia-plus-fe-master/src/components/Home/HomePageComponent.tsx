@@ -156,9 +156,11 @@ const HomePageComponent = ({ popularBrands, newBrands }: props) => {
           </div>
         </section>
         <section className="h-[27.5em] flex items-center bg-[#CC4B3D] w-full">
-          <video className="images" loop autoPlay preload="" muted playsInline>
-            <source type="video/mp4" src="/fondo.mp4" />
-          </video>
+          <a href=" https://experiencia.escala.com/escala-franquiciaplus" target="_blank" rel="noopener noreferrer">
+            <video className="images" loop autoPlay preload="" muted playsInline>
+              <source type="video/mp4" src="/fondo.mp4" />
+            </video>
+          </a>
         </section>
         <section className="-mt-24 z-[1] relative text-white pb-10 flex justify-center gradientHomeBg h-full w-full">
           <div className="sm:max-w-[540px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px] 2xl:max-w-[1320px] w-full flex items-center flex-col">

@@ -52,30 +52,27 @@ export default function BannerHome() {
     setInversion(response.data);
   };
 
-  const filtroBuscar = (
-    category?: string,
-    location?: string,
-    inversion?: string
-  ) => {
-    let queryParameters = "";
+  const filtroBuscar = (category?: string, location?: string, inversion?: string) => {
+  let queryParameters: { [key: string]: string } = {};
 
-    // Construct query parameters based on provided values
-    if (category || location || inversion) {
-      queryParameters += "?";
-      if (category)
-        queryParameters += `categoria=${encodeURIComponent(category)}&`;
-      if (location)
-        queryParameters += `ubicacion=${encodeURIComponent(location)}&`;
-      if (inversion)
-        queryParameters += `inversion=${encodeURIComponent(inversion)}&`;
-      // Remove the trailing '&' character
-      queryParameters = queryParameters.slice(0, -1);
-    }
+  // Solo agrega parámetros si tienen valor
+  if (category) {
+    queryParameters['categoria'] = category;
+  }
+  if (location) {
+    queryParameters['ubicacion'] = location;
+  }
+  if (inversion) {
+    queryParameters['inversion'] = inversion;
+  }
 
-    // Navigate to the target page with the constructed query parameters
-    const targetUrl = `/franquicias-en-ecuador${queryParameters}`;
-    router.push(targetUrl);
-  };
+  // Crea la querystring a partir de los parámetros válidos
+  const queryString = new URLSearchParams(queryParameters).toString();
+  const targetUrl = `/franquicias-en-ecuador${queryString ? `?${queryString}` : ''}`;
+
+  router.push(targetUrl);
+};
+
 
   return (
     <section

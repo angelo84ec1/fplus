@@ -79,13 +79,15 @@ const BrandsPageComponent = ({
       setSelectedInversion(inversion);
     }
 
+    console.log(inversion)
+
     await axios
       .get(`/api/v1/marcas/`, {
         params: {
           page_size: brandsPerPage,
           categoria__nombre: categoria,
           ubicacion__nombre: ubicacion,
-          inversion__nombre: inversion,
+          inversion__nombre_url: inversion,
           estado__nombre: estado,
           directorio__nombre: directorio,
         },

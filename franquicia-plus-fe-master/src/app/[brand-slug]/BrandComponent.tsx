@@ -40,6 +40,15 @@ const getUbications = async () => {
 interface props {
   detalleMarca: DetalleMarca;
 }
+const countries = [
+  { name: 'Ecuador', code: '+593', flag: 'https://upload.wikimedia.org/wikipedia/commons/9/96/Flag_of_Ecuador.png' },
+  { name: 'Argentina', code: '+54', flag: 'https://upload.wikimedia.org/wikipedia/commons/1/1a/Flag_of_Argentina.svg' },
+  { name: 'Brasil', code: '+55', flag: 'https://upload.wikimedia.org/wikipedia/commons/0/05/Flag_of_Brazil.svg' },
+  { name: 'Colombia', code: '+57', flag: 'https://upload.wikimedia.org/wikipedia/commons/2/21/Flag_of_Colombia.svg' },
+  { name: 'México', code: '+52', flag: 'https://upload.wikimedia.org/wikipedia/commons/f/fc/Flag_of_Mexico.svg' },
+  { name: 'Perú', code: '+51', flag: 'https://upload.wikimedia.org/wikipedia/commons/c/cf/Flag_of_Peru.svg' },
+  // Agrega más países si es necesario
+];
 
 const BrandComponent = ({ detalleMarca }: props) => {
   const brandDetails = detalleMarca;
@@ -52,8 +61,32 @@ const BrandComponent = ({ detalleMarca }: props) => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [brand, setBrand] = useState("");
+  const [phoneCode, setPhoneCode] = useState('+593'); // Có
+  const [flag, setFlag] = useState('https://upload.wikimedia.org/wikipedia/commons/9/96/Flag_of_Ecuador.png'); // Bandera inicial de Ecuador
   const router = useRouter();
   const pathname = usePathname();
+
+
+   const handleCountryChange = (e) => {
+  const selectedCountry = e.target.value;
+  setCountry(selectedCountry);
+
+  // Buscar los datos del país seleccionado (código y bandera)
+  const selectedCountryData = countries.find(
+    (c) => c.name === selectedCountry
+  );
+
+  if (selectedCountryData) {
+    setPhoneCode(selectedCountryData.code); // Actualiza el código de teléfono
+    setFlag(selectedCountryData.flag);     // Actualiza la bandera
+    setPhone(selectedCountryData.code);    // Inicializa el campo de teléfono con el nuevo código
+  }
+};
+
+    const handlePhoneChange = (e) => {
+    const phoneValue = e.target.value.replace(phoneCode, ''); // Eliminar el código al editar
+    setPhone(`${phoneCode}${phoneValue}`); // Mantener el código y actualizar el número
+  };
 
   useEffect(() => {
     AOS.init();
@@ -90,13 +123,13 @@ const BrandComponent = ({ detalleMarca }: props) => {
         brand;
 
       const response = axios.post("/marca/send_email/", parametrosn);
-
+        console.log(phone)
       axios
         .post("https://api.escala.com/new-lead/", {
           contact_first_name: name,
           contact_last_name: surname,
           contact_email: email,
-          contact_phone_number: "593" + phone,
+          contact_phone_number: phone,
           contact_job_title: country,
           contact_city: province,
           cf_contact_comentario_aycp_text: message,
@@ -896,18 +929,23 @@ const BrandComponent = ({ detalleMarca }: props) => {
                           />
                         </div>
                         <select
-                          className="form-control cursor-pointer"
-                          id="pais-interes"
-                          name="pais"
-                          value={country}
-                          onChange={(e) => setCountry(e.target.value)}
-                        >
-                          <option value="" disabled selected>
-                            País de Interes
-                          </option>
-                          <option value="Ecuador">Ecuador</option>
-                        </select>
+                            className="form-control cursor-pointer"
+                            id="pais-interes"
+                            name="pais"
+                            value={country}
+                            onChange={handleCountryChange}
+                          >
+                            <option value="" disabled>
+                              País de Interés
+                            </option>
+                            {countries.map((country) => (
+                              <option value={country.name} key={country.code}>
+                                {country.name}
+                              </option>
+                            ))}
+                          </select>
                       </div>
+
                       <div className="relative form-group lg:w-1/2 w-full py-2 px-2 cursor-pointer">
                         <div
                           className={`absolute top-0 bottom-0 flex items-center right-5 pointer-events-none`}
@@ -935,16 +973,22 @@ const BrandComponent = ({ detalleMarca }: props) => {
                           ))}
                         </select>
                       </div>
-                      <div className="form-group lg:w-1/2 w-full py-2 px-2">
-                        <input
-                          type="text"
-                          className="form-control"
-                          name="telefono"
-                          value={phone}
-                          onChange={(e) => setPhone(e.target.value)}
-                          placeholder="Teléfono celular"
-                          required
-                        />
+                        <div className="form-group lg:w-1/2 w-full py-2 px-2 relative">
+                        <div className="flex items-center border rounded-lg overflow-hidden">
+                          <div className="flex items-center px-3 border-r">
+                            <img src={flag} alt={`${country} Flag`} className="w-6 h-4 mr-2" />
+                            <span className="text-700 font-medium">{phoneCode}</span>
+                          </div>
+                          <input
+                            type="text"
+                            className="form-control flex-1 pl-2"
+                            name="telefono"
+                            value={phone}
+                            onChange={handlePhoneChange}
+                            placeholder="Teléfono celular"
+                            required
+                          />
+                        </div>
                       </div>
                       <div className="form-group lg:w-1/2 w-full py-2 px-2">
                         <input
