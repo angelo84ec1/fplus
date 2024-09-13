@@ -1,0 +1,96 @@
+{
+    "url": "habilidades-que-debes-tener-para-abrir-una-franquicia",
+    "title": "Estas son las habilidades que debes tener para abrir una franquicia",
+    "category": "Business",
+    "imageBanner": "https://franquiciaplus.com/Content/img/BlogPost/Post7/internoblog7.png",
+    "seo": {
+        "title": "Estas son las habilidades que debes tener para abrir una franquicia",
+        "description": "Estas son las habilidades que debes tener para abrir una franquicia en Ecuador",
+        "imageSocial": "https://franquiciaplus.com/Content/img/BlogPost/Post7/internoblog7.png",
+        "linkedin": true,
+        "instagram": true,
+        "facebook": true
+    },
+    "body": [
+        {
+            "type": "texto-normal20",
+            "content": "Una franquicia, como cualquier negocio rentable, requiere de un líder con tres características básicas: actitud emprendedora, formación y disponibilidad.",
+            "color": "#000"
+        },
+        {
+            "type": "texto-normal20",
+            "content": "Parte del éxito de una franquicia no es solo elegir una marca testeada y comprobada, sino también la actitud y habilidades del franquiciado, por esta razón te invitamos a realizar una autoevaluación y conocer si estás listo para ser el dueño de tu negocio propio.",
+            "color": "#000"
+        },
+        {   "type":"lista",
+            "content":
+            [
+                {
+                    "type": "titulo-lista20",
+                    "content": "- Disponibilidad:",
+                    "color": "#000"
+                },
+                {
+                    "type": "texto-lista20",
+                    "content": "¿Cuentas con disponibilidad de tiempo completo? Si tu respuesta es afirmativa suma 10 puntos en tu autoevaluación. Iniciar con una franquicia va a demandar de tu atención, dedicación y esfuerzo personal. Sin importar el tipo de franquicia, va a ser indispensable tu compromiso, interés y pasión, por esta razón es mucho mejor que inviertas en un negocio que sea afín a tus intereses personales y te motive a diario.",
+                    "color": "#000"
+                },
+                {
+                    "type": "titulo-lista20",
+                    "content": "- Entender y aplicar el modelo de negocio:",
+                    "color": "#000"
+                },
+                {
+                    "type": "texto-lista20",
+                    "content": "Al decidir invertir en una franquicia, debes tener muy claro que es un modelo de negocio en el que las decisiones las toma el franquiciador y deberás sujetarte a ellas, a cambio recibirás soporte, capacitación y seguridad de un negocio comprobado y exitoso. ¿Puedes seguir las directrices y procedimientos determinados por otro? Si tu respuesta es afirmativa, suma otros 10 puntos.",
+                    "color": "#000"
+                },
+                {
+                    "type": "titulo-lista20",
+                    "content": "- Habilidades de Gestión y Liderazgo:",
+                    "color": "#000"
+                },
+                {
+                    "type": "texto-lista20",
+                    "content": "Sin duda vas a estar relacionado con colaboradores, proveedores y clientes, para ello debes saber crear vínculos, motivar, generar confianza, anticiparse a los problemas; básicamente liderar tanto el negocio como el personal a cargo.",
+                    "color": "#000"
+                },
+                {
+                    "type": "texto-lista20",
+                    "content": "Además debes contar con conocimientos financieros básicos para entender las cuentas y estado financiero de tu negocio. ¿Te identificas con este punto? Enhorabuena, tu calificación va en aumento.",
+                    "color": "#000"
+                },
+                {
+                    "type": "titulo-lista20",
+                    "content": "- Contar con un capital para inversión de $25.000:",
+                    "color": "#000"
+                },
+                {
+                    "type": "texto-lista20",
+                    "content": "Nuestra recomendación es que cuentes con al menos el 50% del capital inicial, y la diferencia la obtengas a través de un préstamo, sociedad o apalancamiento. Hacemos esta sugerencia en base a nuestros años de experiencia, ya que es importante que percibas las ganancias, más no sean destinadas únicamente a pagar el crédito.",
+                    "color": "#000"
+                },
+                {
+                    "type": "texto-lista20",
+                    "content": "Debes tomar en cuenta que el rango de inversión promedio para abrir una franquicia en Ecuador es de $50.000 según el tipo de negocio, aunque las puedes encontrar desde los $7.000 a $80.000, incluso superar el millón de dólares.",
+                    "color": "#000"
+                }
+            ]
+        },
+        {
+            "type": "texto-normal20",
+            "content": "¿Cumples con la mayoría de requisitos? Felicitaciones, es momento de elegir una franquicia acorde a tu perfil, presupuesto y ubicación.",
+            "color": "#000"
+        },
+        {
+            "type": "texto-normal20",
+            "content": "Con mucho gusto uno de nuestros asesores te acompañará en este proceso, comunícate con nosotros al 0988588901.",
+            "color": "#000"
+        },
+        {
+            "type": "enlace20",
+            "content": "https://bit.ly/FranquiciaPlus",
+            "color": "#0297D7"
+        }
+    ]
+}

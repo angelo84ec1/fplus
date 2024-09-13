@@ -1,0 +1,76 @@
+{
+    "url": "requisitos-claves-para-abrir-una-franquicia",
+    "title": "Requisitos claves para abrir una franquicia ",
+    "category": "Business",
+    "imageBanner": "https://franquiciaplus.com/Content/img/BlogPost/Post2/internoblog2.png",
+    "seo": {
+        "title": "Requisitos claves para abrir una franquicia",
+        "description": "Requisitos claves para abrir una franquicia en Ecuador",
+        "imageSocial": "https://franquiciaplus.com/Content/img/BlogPost/Post2/internoblog2.png",
+        "linkedin": true,
+        "instagram": true,
+        "facebook": true
+    },
+    "body": [
+        {
+            "type": "texto-normal20",
+            "content": "Como ya sabes las franquicias son un modelo de negocio que ha sido comprobado, tiene sus procesos establecidos y un know-how propio.",
+            "color": "#000"
+        },
+        {
+            "type": "texto-normal20",
+            "content": "Las franquicias le dan la oportunidad a emprendedores de iniciar un negocio exitoso y comprobado, beneficiándose de la experiencia del franquiciado además del respaldo que implica una marca establecida y posicionada.",
+            "color": "#000"
+        },
+        {
+            "type": "texto-normal20",
+            "content": "Sin embargo debes asegurarte de elegir la mejor opción para ti, tomando en cuenta el monto de la inversión, la forma de financiamiento, ubicación, aspectos legales, etc.",
+            "color": "#000"
+        },
+        {
+            "type": "texto-normal20",
+            "content": "Revisemos juntos los requisitos que debes tener en cuenta antes de invertir en una franquicia:",
+            "color": "#000"
+        },
+        {   "type":"lista",
+            "content":
+            [
+                {
+                    "type": "titulo-lista20",
+                    "content": "1. Familiarízate con este modelo de negocio:",
+                    "color": "#000"
+                },
+                {
+                    "type": "texto-lista20",
+                    "content": "Una franquicia consiste en seguir los pasos establecidos por el franquiciante, y para ello debes recibir documentación correcta y completa.",
+                    "color": "#000"
+                },
+                {
+                    "type": "titulo-lista20",
+                    "content": "2. Monto de inversión y financiamiento.",
+                    "color": "#000"
+                },
+                {
+                    "type": "texto-lista20",
+                    "content": "Dentro del mundo de las franquicias tienes muchas posibilidades, desde los $3.000, pasando por los $100.000 hasta superar el millón de dólares. Nuestra recomendación es que no te endeudes por el valor total de inversión. Busca apalancamiento, como una sociedad.",
+                    "color": "#000"
+                },
+                {
+                    "type": "titulo-lista20",
+                    "content": "3. Marco Legal",
+                    "color": "#000"
+                },
+                {
+                    "type": "texto-lista20",
+                    "content": "Analiza las características y el tipo de contrato, renovación, regalías, relación entre las partes y las obligaciones y derechos que todos deben cumplir.",
+                    "color": "#000"
+                }
+            ]
+        },
+        {
+            "type": "texto-normal20",
+            "content": "En Franquicia Plus te asesoramos para elegir una franquicia que se ajuste a tu perfil y posibilidades. ¿Te gustaría contar con nuestra guía? Contáctanos al 0988588901",
+            "color": "#000"
+        }
+    ]
+}

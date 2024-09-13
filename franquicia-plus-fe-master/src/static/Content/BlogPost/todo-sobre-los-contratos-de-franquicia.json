@@ -1,0 +1,106 @@
+{
+    "url": "todo-sobre-los-contratos-de-franquicia",
+    "title": "Todo lo que debes saber sobre los contratos de franquicia",
+    "category": "Noticias",
+    "imageBanner": "https://franquiciaplus.com/Content/img/BlogPost/Post3/internoblog3.png",
+    "seo": {
+        "title": "contratos de franquicias en Ecuador",
+        "description": "Todo lo que debes saber sobre los contratos de franquicias en Ecuador",
+        "imageSocial": "https://franquiciaplus.com/Content/img/BlogPost/Post3/internoblog3.png",
+        "linkedin": true,
+        "instagram": true,
+        "facebook": true
+    },
+    "body": [
+        {
+            "type": "texto-normal20",
+            "content": "El contrato viene a ser el inicio formal en la adquisición de tu nueva franquicia. En este documento se plasman las obligaciones y derechos que tendrán tanto el franquiciador como el franquiciado.",
+            "color": "#000"
+        },
+        {
+            "type": "titulo20",
+            "content": "¿Qué incluye un contrato de franquicia?",
+            "color": "#02C7D7"
+        },
+        {
+            "type": "texto-normal20",
+            "content": "Dentro del contrato se establecerán los aspectos operativos de acuerdo al tipo de negocio, toma en cuenta que cada marca tiene sus particularidades. De forma general el contrato debe incluir la duración, la cesión de derechos, la localización o las renovaciones y sanciones.",
+            "color": "#000"
+        },
+        {
+            "type": "texto-normal20",
+            "content": "Se incluyen también los datos básicos del franquiciado, como son nombre, razón social y domicilio; junto con la descripción del sector de actividad, la cláusula de confidencialidad y, sobre todo, la acreditación para contar con la cesión del título de la propiedad y uso de la marca.",
+            "color": "#000"
+        },
+        {
+            "type": "texto-normal20",
+            "content": "En pocas palabras, el contrato indica que el franquiciador cede al franquiciado los derechos de utilización sobre la marca, sus signos distintivos, su modelo de negocio, sus secretos industriales y los demás elementos que caracterizan el modelo de empresa en cuestión.",
+            "color": "#000"
+        },
+        {
+            "type": "titulo20",
+            "content": "¿Qué beneficios y obligaciones tiene un franquiciado?",
+            "color": "#02C7D7"
+        },
+        {
+            "type": "texto-normal20",
+            "content": "Como beneficios, al momento de convertirte en franquiciado debes recibir capacitación en varios aspectos, como funcionamiento, administración y gestión, procesos, etc., así como la asistencia comercial y soporte técnico durante la vigencia del contrato.",
+            "color": "#000"
+        },
+        {
+            "type": "texto-normal20",
+            "content": "Las obligaciones del franquiciado pueden incluir temas como:",
+            "color": "#000"
+        },
+        {   "type":"lista",
+            "content":
+            [
+                {
+                    "type": "texto-lista20",
+                    "content": "Cumplimiento de métodos de gestión, técnicas, normas y especificaciones planteadas por el franquiciador.",
+                    "color": "#000"
+                },
+                {
+                    "type": "texto-lista20",
+                    "content": "Obligaciones económicas con la franquicia: valor de la franquicia, regalías, fee de marketing, etc.",
+                    "color": "#000"
+                },
+                {
+                    "type": "texto-lista20",
+                    "content": "Uso de los derechos de propiedad industrial e intelectual.",
+                    "color": "#000"
+                },
+                {
+                    "type": "texto-lista20",
+                    "content": "Obligación de no competencia.",
+                    "color": "#000"
+                }
+            ]
+        },
+        {
+            "type": "titulo30",
+            "content": "¿Cuánto dura el contrato?",
+            "color": "#FA5E4D"
+        },
+        {
+            "type": "texto-normal20",
+            "content": "La duración del mismo está determinado por cada franquicia, generalmente se incluye la posibilidad de renovación con un valor adicional. El tiempo de duración del contrato oscila entre cinco y diez años.",
+            "color": "#000"
+        },
+        {
+            "type": "texto-normal20",
+            "content": "Para finalizar, toma en cuenta que ningún contrato asegura el éxito o rentabilidad de un negocio, lograrlo implica trabajo y esfuerzo, como todo aquello que vale la pena.",
+            "color": "#000"
+        },
+        {
+            "type": "texto-normal20",
+            "content": "Recuerda que si estás pensando en invertir en una franquicia y quieres asesoría en el proceso, puedes contactarte con nosotros en el siguiente link:",
+            "color": "#000"
+        },
+        {
+            "type": "enlace20",
+            "content": "https://bit.ly/FranquiciaPlus",
+            "color": "#0297D7"
+        }
+    ]
+}

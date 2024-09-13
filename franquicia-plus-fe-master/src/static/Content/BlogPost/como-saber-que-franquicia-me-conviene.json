@@ -1,0 +1,101 @@
+{
+    "url": "como-saber-que-franquicia-me-conviene",
+    "title": "¿Cómo saber que franquicia me conviene?",
+    "category": "Marketing",
+    "imageBanner": "https://franquiciaplus.com/Content/img/BlogPost/Post5/internoblog5.png",
+    "seo": {
+        "title": "¿Cómo saber que franquicia me conviene?",
+        "description": "¿Cómo saber que franquicia me conviene?",
+        "imageSocial": "https://franquiciaplus.com/Content/img/BlogPost/Post5/internoblog5.png",
+        "linkedin": true,
+        "instagram": true,
+        "facebook": true
+    },
+    "body": [
+        {
+            "type": "texto-normal20",
+            "content": "Los emprendedores saben que adquirir  una franquicia es una excelente opción para iniciarse en el mundo de los negocios, mejor aún si eliges a una franquicia que vaya contigo.",
+            "color": "#000"
+        },
+        {
+            "type": "texto-normal20",
+            "content": "Muchos expertos en negocios consideran que el modelo de franquicias será el formato principal de los negocios en el futuro, debido a la fuerza de las marcas en cuanto a su posicionamiento en el mercado y la credibilidad generada en sus clientes, lo que aumenta su probabilidad de éxito.",
+            "color": "#000"
+        },
+        {
+            "type": "texto-normal20",
+            "content": "Para una persona que recién incursiona, con poca o ningún tipo de experiencia como empresario, una franquicia le permite alcanzar el éxito en los negocios por dos principales razones: recuperar la inversión en un plazo aceptable y el crecimiento de una marca reconocida y comprobada.",
+            "color": "#000"
+        },
+        {
+            "type": "titulo20",
+            "content": "¿Qué aspectos deberías considerar para adquirir una franquicia?",
+            "color": "#02C7D7"
+        },
+        {   "type":"lista",
+            "content":
+            [
+                {
+                    "type": "texto-lista20",
+                    "content": "- Tiempo en el mercado.",
+                    "color": "#000"
+                },
+                {
+                    "type": "texto-lista20",
+                    "content": "- Mejor si cuenta con más de una sucursal.",
+                    "color": "#000"
+                },
+                {
+                    "type": "texto-lista20",
+                    "content": "- Marca posicionada y reconocida.",
+                    "color": "#000"
+                },
+                {
+                    "type": "texto-lista20",
+                    "content": "- Contar con procesos amigables y replicables.",
+                    "color": "#000"
+                },
+                {
+                    "type": "texto-lista20",
+                    "content": "- Tener un sistema de costos.",
+                    "color": "#000"
+                },
+                {
+                    "type": "texto-lista20",
+                    "content": "- Acompañamiento y capacitación al implementar una nueva franquicia.",
+                    "color": "#000"
+                },
+                {
+                    "type": "texto-lista20",
+                    "content": "- Conocer al empresario detrás de la franquicia.",
+                    "color": "#000"
+                }
+            ]
+        },
+        {
+            "type": "titulo20",
+            "content": "¿Cómo saber qué franquicia te conviene más?",
+            "color": "#02C7D7"
+        },
+        {
+            "type": "texto-normal20",
+            "content": "En Franquicia Plus, un portal para conectar franquicias con posibles franquiciados en Ecuador y Latinoamérica, conocemos la importancia de calificar a los prospectos y sus ubicaciones, ya que son factores clave para comercializar una franquicia. Así como calificar a los franquiciantes, para asegurarnos que su negocio sea probado y exitoso.",
+            "color": "#000"
+        },
+        {
+            "type": "texto-normal20",
+            "content": "Esta evaluación de ambas partes nos permite entender a profundidad el giro de negocio y las habilidades y competencias que debe tener el franquiciado, para conectarse con un negocio que lo apasione y sea sostenible en el tiempo, incrementando sus probabilidades de crecimiento y retorno de la inversión a un plazo conveniente.",
+            "color": "#000"
+        },
+        {
+            "type": "texto-normal20",
+            "content": "Si deseas certificarte como franquiciado calificado comunícate con nosotros para iniciar el proceso. Recuerda que este paso no tiene ningún costo. Comunícate con nosotros a este link de whatsapp",
+            "color": "#000"
+        },
+        {
+            "type": "enlace20",
+            "content": "https://bit.ly/FranquiciaPlus",
+            "color": "#0297D7"
+        }
+    ]
+}

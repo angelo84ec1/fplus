@@ -1,0 +1,29 @@
+{
+    "categorias": [
+        {
+            "id": 1,
+            "nombre": "Todas",
+            "value": "Todas"
+        },
+        {
+            "id": 2,
+            "nombre": "Business",
+            "value": "Business"
+        },
+        {
+            "id": 3,
+            "nombre": "Marketing",
+            "value": "Marketing"
+        },
+        {
+            "id": 4,
+            "nombre": "Casos de Éxito",
+            "value": "Casos-de-Exito"
+        },
+        {
+            "id": 5,
+            "nombre": "Noticias",
+            "value": "Noticias"
+        }
+    ]
+}

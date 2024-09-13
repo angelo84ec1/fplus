@@ -1,0 +1,116 @@
+{
+    "seo": {
+        "title": "Franquicias en Ecuador 2022",
+        "description": "Franquicias en Ecuador 2022 encuentralas en franquiciaplus"
+    },
+    "blogs": [
+        {
+            "id": 1,
+            "fecha": "15 / 01 / 2022",
+            "fechaOrdenada": "2022-01-15",
+            "nombre": "Franquicias en Ecuador 2022",
+            "imagen": "https://fisiec.com/Content/img/BlogGeneral/enero22.png",
+            "url":"franquicias-en-Ecuador-2022",
+            "valueCategoria": "Business"
+        },
+        {
+            "id": 2,
+            "fecha": "15 / 02 / 2022",
+            "fechaOrdenada": "2022-02-15",
+            "nombre": "Requisitos claves para abrir una franquicia",
+            "url":"requisitos-claves-para-abrir-una-franquicia",
+            "imagen": "https://fisiec.com/Content/img/BlogGeneral/febrero22.png",
+            "valueCategoria": "Business"
+        },
+        {
+            "id": 3,
+            "fecha": "15 / 03 / 2022",
+            "fechaOrdenada": "2022-03-15",
+            "nombre": "Todo lo que debes saber sobre los contratos de franquicia",
+            "url":"todo-sobre-los-contratos-de-franquicia",
+            "imagen": "https://fisiec.com/Content/img/BlogGeneral/marzo22.png",
+            "valueCategoria": "Noticias"
+        },
+        {
+            "id": 4,
+            "fecha": "15 / 04 / 2022",
+            "fechaOrdenada": "2022-04-15",
+            "nombre": "¿Cómo vender o comprar una franquicia en Ecuador?",
+            "url":"como-vender-o-comprar-una-franquicia-en-ecuador",
+            "imagen": "https://fisiec.com/Content/img/BlogGeneral/abril22.png",
+            "valueCategoria": "Marketing"
+        },
+        {
+            "id": 5,
+            "fecha": "15 / 05 / 2022",
+            "fechaOrdenada": "2022-05-15",
+            "nombre": "¿Cómo saber que franquicia me conviene?",
+            "url":"como-saber-que-franquicia-me-conviene",
+            "imagen": "https://fisiec.com/Content/img/BlogGeneral/mayo22.png",
+            "valueCategoria": "Marketing"
+        },
+        {
+            "id": 6,
+            "fecha": "15 / 06 / 2022",
+            "fechaOrdenada": "2022-06-15",
+            "nombre": "¿Cómo financiar la compra de una franquicia?",
+            "url":"como-financiar-la-compra-de-una-franquicia",
+            "imagen": "https://fisiec.com/Content/img/BlogGeneral/junio22.png",
+            "valueCategoria": "Business"
+        },
+        {
+            "id": 7,
+            "fecha": "15 / 07 / 2022",
+            "fechaOrdenada": "2022-07-15",
+            "nombre": "Estas son las habilidades que debes tener para abrir una franquicia",
+            "url":"habilidades-que-debes-tener-para-abrir-una-franquicia",
+            "imagen": "https://fisiec.com/Content/img/BlogGeneral/julio22.png",
+            "valueCategoria": "Marketing"
+        },
+        {
+            "id": 8,
+            "fecha": "15 / 08 / 2022",
+            "fechaOrdenada": "2022-08-15",
+            "nombre": "Opciones para invertir en Ecuador parte I",
+            "url":"opciones-para-invertir-en-ecuador-parte-i",
+            "imagen": "https://fisiec.com/Content/img/BlogGeneral/agosto22.png",
+            "valueCategoria": "Casos-de-Exito"
+        },
+        {
+            "id": 9,
+            "fecha": "15 / 09 / 2022",
+            "fechaOrdenada": "2022-09-15",
+            "nombre": "La formación del franquiciado para tener un negocio exitoso",
+            "url":"la-formacion-del-franquiciado-para-tener-un-negocio-exitoso",
+            "imagen": "https://fisiec.com/Content/img/BlogGeneral/septiembre22.png",
+            "valueCategoria": "Noticias"
+        },
+        {
+            "id": 10,
+            "fecha": "15 / 10 / 2022",
+            "fechaOrdenada": "2022-10-15",
+            "nombre": "Opciones para invertir en Ecuador parte II",
+            "url":"opciones-para-invertir-en-ecuador-parte-ii",
+            "imagen": "https://fisiec.com/Content/img/BlogGeneral/octubre22.png",
+            "valueCategoria": "Casos-de-Exito"
+        },
+        {
+            "id": 11,
+            "fecha": "15 / 11 / 2022",
+            "fechaOrdenada": "2022-11-15",
+            "nombre": "¿Cómo adquirir una franquicia de Sweet & Coffee en Ecuador?",
+            "url":"como-adquirir-una-franquicia-de-sweet-and-coffee-en-ecuador",
+            "imagen": "https://fisiec.com/Content/img/BlogGeneral/noviembre22.png",
+            "valueCategoria": "Marketing"
+        },
+        {
+            "id": 12,
+            "fecha": "15 / 12 / 2022",
+            "fechaOrdenada": "2022-12-15",
+            "nombre": "Cómo adquirir una de las franquicias de KFC en Ecuador",
+            "url":"como-adquirir-una-franquicia-de-kfc-en-ecuador",
+            "imagen": "https://fisiec.com/Content/img/BlogGeneral/diciembre22.png",
+            "valueCategoria": "Marketing"
+        }
+    ]
+}

@@ -1,0 +1,26 @@
+RewriteEngine On
+#www to non www redirect
+RewriteBase /
+RewriteCond %{HTTP_HOST} www.franquiciaplus.com [NC]
+RewriteRule ^(.*)$ https://franquiciaplus.com/$1 [R=301,L]
+
+# Http to https
+
+RewriteCond %{SERVER_PORT} 80
+RewriteCond %{HTTP_HOST} ^franquiciaplus\.com [NC]
+RewriteRule ^(.*)$ https://franquiciaplus.com/$1 [R,L]
+
+# RewriteCond %{HTTPS} !on
+# RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+# RewriteRule ^.*$ https://%{HTTP_HOST}%{REQUEST_URI} [L,QSA,NE]
+# Header set Content-Security-Policy "upgrade-insecure-requests;"
+
+ErrorDocument 404 /error.vue
+
+<IfModule mod_headers.c>
+  # Deshabilitar el almacenamiento en caché para todos los recursos
+  <FilesMatch "\.(jpg|jpeg|png|gif|webp|ico|woff2?|mp4|webm|ogg|css|js)$">
+    Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
+  </FilesMatch>
+</IfModule>
+

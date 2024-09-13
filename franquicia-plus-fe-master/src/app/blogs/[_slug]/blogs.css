@@ -1,0 +1,310 @@
+/* Sección Categorias */
+.container-categorias-individuales {
+  margin: 0.5em 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+}
+
+.categorias > p {
+  font-size: 1.5em;
+  font-family: "Mukata Mahee Bold";
+  margin-bottom: 0.875em;
+}
+
+.categorias-individuales {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  color: #000;
+  text-decoration: none;
+  text-align: center;
+  background-color: #fff;
+  width: 80%;
+  height: 2.3em;
+  line-height: 0.5;
+  border-radius: 0.25em;
+  font-family: "Mukata Mahee Medium";
+  box-shadow: 0.3em 0.3em 1em -0.3em rgb(106 105 105);
+  border: 0.0625em solid transparent;
+  border-radius: 0.5em;
+}
+
+.categoria-compartir {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  background-color: #f85e4d;
+  width: 80%;
+  height: 2.3em;
+  line-height: 0.5;
+  border-radius: 0.25em;
+  font-family: "Mukata Mahee Medium";
+  box-shadow: 0.3em 0.3em 1em -0.3em rgb(106 105 105);
+  border: 0.0625em solid transparent;
+  border-radius: 0.5em;
+}
+
+.categoria-compartir:hover {
+  background-color: #0d132f;
+  color: white;
+}
+
+.categoria-compartir > p {
+  width: 70%;
+}
+
+.categoria-compartir > .icono-compartir {
+  width: 12%;
+}
+
+.categoria-seleccionada > a {
+  background: #02c5d5;
+  border-color: #02c5d5;
+  color: #333333;
+}
+
+/* Cuerpo Post Blog */
+.banner-post-blog {
+  width: 100%;
+  height: 14em;
+  border-radius: 1.5em;
+  box-shadow: inset 0px -2.125em 3em #02c7d7;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: flex-end;
+}
+
+.title-blog-post {
+  margin-bottom: 1.5rem;
+  margin-left: 1.5rem;
+  font-size: 2em;
+  font-family: "Mukata Mahee Extra Bold";
+  color: white;
+}
+
+.lista2imagenes > div {
+  margin: 0 1.25em 0 0px;
+}
+
+.imagen-mediana {
+  height: 33vh;
+}
+
+.imagen-grande {
+  height: 50vh;
+}
+
+/* generado */
+.title {
+  margin: 1.25em 0;
+  font-family: "Mukata Mahee Bold";
+}
+
+.tamañoLetra14 {
+  font-size: 0.875em;
+}
+
+.tamañoLetra16 {
+  font-size: 1em;
+}
+
+.tamañoLetra18 {
+  font-size: 1.125em;
+}
+
+.tamañoLetra20 {
+  font-size: 1.25em;
+}
+
+.tamañoLetra22 {
+  font-size: 1.375em;
+}
+
+.tamañoLetra24 {
+  font-size: 1.5em;
+}
+
+.tamañoLetra26 {
+  font-size: 1.625em;
+}
+
+.tamañoLetra28 {
+  font-size: 1.75em;
+}
+
+.tamañoLetra30 {
+  font-size: 1.875em;
+}
+
+.parrafo {
+  color: #000;
+  margin: 1.25em 0;
+  line-height: 1.5;
+  font-family: "Mukata Mahee Regular";
+}
+
+.enlace {
+  margin: 1.25em 0;
+  line-height: 1.5;
+  font-family: "Mukata Mahee Regular";
+}
+
+.list {
+  color: #000;
+  margin: 1.25em 0;
+  line-height: 1.5;
+}
+
+.list > ul {
+  padding-left: 2em;
+}
+
+.tituloLista {
+  font-family: "Mukata Mahee Bold";
+}
+
+.textoLista {
+  font-family: "Mukata Mahee Regular";
+}
+
+.list ul li,
+.list ol li {
+  margin: 0.3125em 0;
+}
+
+.list ol {
+  list-style-type: decimal;
+}
+
+.list ul {
+  list-style-type: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+.my-40px {
+  margin-top: 2.5em;
+  margin-bottom: 2.5em;
+}
+
+.my-20px {
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+}
+
+.redes-sociales > .facebook:hover {
+  color: white;
+  background-color: #1877f2;
+}
+
+.redes-sociales > .twitter:hover {
+  color: white;
+  background-color: #1da1f2;
+}
+
+.redes-sociales > .linkedin:hover {
+  color: white;
+  background-color: #0073b1;
+}
+
+.titulo-section-interes {
+  color: white;
+  font-family: "Mukata Mahee Extra Bold";
+  font-size: 2em;
+}
+
+.blogs-de-interes {
+  background-color: #0d132f;
+}
+
+@media (max-width: 767px) {
+  body {
+    font-size: 14px;
+  }
+
+  .categorias {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .categorias > p {
+    font-size: 2em;
+  }
+}
+
+@media (min-width: 992px) {
+  .container-grande {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+}
+
+/*  */
+
+.boton-compartir {
+  cursor: pointer;
+}
+
+.redes-sociales {
+  display: flex;
+  justify-content: space-between;
+}
+
+.redes-sociales button {
+  padding: 10px 20px;
+  background-color: #eee;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 0.5em;
+}
+
+.redes-sociales button:hover {
+  background-color: #ddd;
+}
+
+@media (max-width: 767px) {
+  .phone {
+    display: flex;
+  }
+  .pc {
+    display: none;
+  }
+  .categories {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .share-button {
+    font-size: 2em;
+  }
+}
+
+@media (min-width: 767px) {
+  .phone {
+    display: none;
+  }
+  .pc {
+  }
+  .categories {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+  .share-button {
+  }
+}
+
+.html {
+  display: inline;
+}

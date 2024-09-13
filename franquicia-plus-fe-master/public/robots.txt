@@ -1,0 +1,3 @@
+robots.txt:
+User-Agent: *
+Sitemap: https://franquiciaplus.com/sitemap.xml

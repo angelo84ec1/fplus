@@ -1,0 +1,125 @@
+{
+    "seo": {
+        "title": "Franquicias en Ecuador 2022",
+        "description": "Franquicias en Ecuador 2022 encuentralas en franquiciaplus"
+    },
+    "blogs": [
+        {
+            "id": 1,
+            "fecha": "15 / 01 / 2022",
+            "fechaOrdenada": "2022-01-15",
+            "nombre": "Franquicias en Ecuador 2022",
+            "imagen": "/BlogGeneral/enero22.webp",
+            "url":"franquicias-en-ecuador-2022",
+            "valueCategoria": "Business"
+        },
+        {
+            "id": 2,
+            "fecha": "15 / 02 / 2022",
+            "fechaOrdenada": "2022-02-15",
+            "nombre": "Requisitos claves para abrir una franquicia",
+            "url":"requisitos-claves-para-abrir-una-franquicia",
+            "imagen": "/BlogGeneral/febrero22.webp",
+            "valueCategoria": "Business"
+        },
+        {
+            "id": 3,
+            "fecha": "15 / 03 / 2022",
+            "fechaOrdenada": "2022-03-15",
+            "nombre": "Todo lo que debes saber sobre los contratos de franquicia",
+            "url":"todo-sobre-los-contratos-de-franquicia",
+            "imagen": "/BlogGeneral/marzo22.webp",
+            "valueCategoria": "Noticias"
+        },
+        {
+            "id": 4,
+            "fecha": "15 / 04 / 2022",
+            "fechaOrdenada": "2022-04-15",
+            "nombre": "¿Cómo vender o comprar una franquicia en Ecuador?",
+            "url":"como-vender-o-comprar-una-franquicia-en-ecuador",
+            "imagen": "/BlogGeneral/abril22.webp",
+            "valueCategoria": "Marketing"
+        },
+        {
+            "id": 5,
+            "fecha": "15 / 05 / 2022",
+            "fechaOrdenada": "2022-05-15",
+            "nombre": "¿Cómo saber que franquicia me conviene?",
+            "url":"como-saber-que-franquicia-me-conviene",
+            "imagen": "/BlogGeneral/mayo22.webp",
+            "valueCategoria": "Marketing"
+        },
+        {
+            "id": 6,
+            "fecha": "15 / 06 / 2022",
+            "fechaOrdenada": "2022-06-15",
+            "nombre": "¿Cómo financiar la compra de una franquicia?",
+            "url":"como-financiar-la-compra-de-una-franquicia",
+            "imagen": "/BlogGeneral/junio22.webp",
+            "valueCategoria": "Business"
+        },
+        {
+            "id": 7,
+            "fecha": "15 / 07 / 2022",
+            "fechaOrdenada": "2022-07-15",
+            "nombre": "Estas son las habilidades que debes tener para abrir una franquicia",
+            "url":"habilidades-que-debes-tener-para-abrir-una-franquicia",
+            "imagen": "/BlogGeneral/julio22.webp",
+            "valueCategoria": "Marketing"
+        },
+        {
+            "id": 8,
+            "fecha": "15 / 08 / 2022",
+            "fechaOrdenada": "2022-08-15",
+            "nombre": "Opciones para invertir en Ecuador parte I",
+            "url":"opciones-para-invertir-en-ecuador-parte-i",
+            "imagen": "/BlogGeneral/agosto22.webp",
+            "valueCategoria": "Casos-de-Exito"
+        },
+        {
+            "id": 9,
+            "fecha": "15 / 09 / 2022",
+            "fechaOrdenada": "2022-09-15",
+            "nombre": "La formación del franquiciado para tener un negocio exitoso",
+            "url":"la-formacion-del-franquiciado-para-tener-un-negocio-exitoso",
+            "imagen": "/BlogGeneral/septiembre22.webp",
+            "valueCategoria": "Noticias"
+        },
+        {
+            "id": 10,
+            "fecha": "15 / 10 / 2022",
+            "fechaOrdenada": "2022-10-15",
+            "nombre": "Opciones para invertir en Ecuador parte II",
+            "url":"opciones-para-invertir-en-ecuador-parte-ii",
+            "imagen": "/BlogGeneral/octubre22.webp",
+            "valueCategoria": "Casos-de-Exito"
+        },
+        {
+            "id": 11,
+            "fecha": "15 / 11 / 2022",
+            "fechaOrdenada": "2022-11-15",
+            "nombre": "¿Cómo adquirir una franquicia de Sweet & Coffee en Ecuador?",
+            "url":"como-adquirir-una-franquicia-de-sweet-and-coffee-en-ecuador",
+            "imagen": "/BlogGeneral/noviembre22.webp",
+            "valueCategoria": "Marketing"
+        },
+        {
+            "id": 12,
+            "fecha": "15 / 12 / 2022",
+            "fechaOrdenada": "2022-12-15",
+            "nombre": "¿Cómo adquirir una de las franquicias de KFC en Ecuador?",
+            "url":"como-adquirir-una-franquicia-de-kfc-en-ecuador",
+            "imagen": "/BlogGeneral/diciembre22.webp",
+            "valueCategoria": "Marketing"
+        },
+        {
+            "id": 13,
+            "fecha": "15 / 01 / 2024",
+            "fechaOrdenada": "2024-01-15",
+            "nombre": "¿Cómo franquiciar un negocio?",
+            "url":"como-franquiciar-un-negocio",
+            "imagen": "/BlogGeneral/enero24.webp",
+            "valueCategoria": "Marketing"
+        }
+    ]
+}
