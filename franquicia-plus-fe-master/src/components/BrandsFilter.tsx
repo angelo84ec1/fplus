@@ -46,7 +46,7 @@ const BrandsFilter = ({
         <div className="flex flex-col gap-y-4">
           <select
             value={selectedCategory}
-            onChange={(e) => {
+            onChange={(e : any) => {
               setSelectedCategory(e.target.value);
             }}
             className="sector-select"
@@ -61,7 +61,7 @@ const BrandsFilter = ({
           </select>
           <select
             value={selectedUbication}
-            onChange={(e) => {
+            onChange={(e : any) => {
               setSelectedUbication(e.target.value);
             }}
             className="sector-select"
@@ -112,7 +112,7 @@ const BrandsFilter = ({
           </Accordion>
           <select
             value={selectedInversion}
-            onChange={(e) => setSelectedInversion(e.target.value)}
+            onChange={(e : any) => setSelectedInversion(e.target.value)}
             className="sector-select"
             name="inversion"
           >

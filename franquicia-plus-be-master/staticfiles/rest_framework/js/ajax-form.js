@@ -5,7 +5,7 @@ function replaceDocument(docString) {
   doc.close();
 }
 
-function doAjaxSubmit(e) {
+function doAjaxSubmit(e : any) {
   var form = $(this);
   var btn = $(this.clk);
   var method = (
@@ -110,7 +110,7 @@ function doAjaxSubmit(e) {
   return ret;
 }
 
-function captureSubmittingElement(e) {
+function captureSubmittingElement(e : any) {
   var target = e.target;
   var form = this;
 

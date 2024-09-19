@@ -41,7 +41,7 @@ export async function middleware(request: NextRequest) {
     const blogUrl = pathChunks[2];
     try {
       require(`@/static/Content/BlogPost/${blogUrl}.json`);
-    } catch (e) {
+    } catch (e : any) {
       return NextResponse.next({ status: 404 });
     }
   }

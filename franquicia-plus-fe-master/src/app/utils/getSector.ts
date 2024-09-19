@@ -5,7 +5,7 @@ const getSector = async (sector: string) => {
       
       if(response.status > 400) throw new Error("Status code err")
       return await response.json();
-    }catch(e){
+    }catch(e : any){
       return null
     }
   };

@@ -102,15 +102,15 @@ var jsc = {
 				if (optsStr.trim()) {
 					try {
 						opts = jsc.parseOptionsStr(optsStr);
-					} catch (e) {
+					} catch (e : any) {
 						console.warn(e + '\n' + optsStr);
 					}
 				}
 
 				try {
 					new jsc.pub(targetElm, opts);
-				} catch (e) {
-					console.warn(e);
+				} catch (e : any) {
+					console.warn(e : any);
 				}
 			}
 		}
@@ -169,8 +169,8 @@ var jsc = {
 			var el = null;
 			try {
 				el = window.document.querySelector(sel);
-			} catch (e) {
-				console.warn(e);
+			} catch (e : any) {
+				console.warn(e : any);
 				return null;
 			}
 			if (!el) {
@@ -249,7 +249,7 @@ var jsc = {
 			});
 			window.addEventListener('testPassive', null, opts);
 			window.removeEventListener('testPassive', null, opts);
-		} catch (e) {}
+		} catch (e : any) {}
 
 		return supported;
 	})(),
@@ -373,7 +373,7 @@ var jsc = {
 	},
 
 
-	preventDefault : function (e) {
+	preventDefault : function (e : any) {
 		if (e.preventDefault) { e.preventDefault(); }
 		e.returnValue = false;
 	},
@@ -666,13 +666,13 @@ var jsc = {
 	},
 
 
-	getElementSize : function (e) {
+	getElementSize : function (e : any) {
 		return [e.offsetWidth, e.offsetHeight];
 	},
 
 
 	// get pointer's X/Y coordinates relative to viewport
-	getAbsPointerPos : function (e) {
+	getAbsPointerPos : function (e : any) {
 		var x = 0, y = 0;
 		if (typeof e.changedTouches !== 'undefined' && e.changedTouches.length) {
 			// touch devices
@@ -687,7 +687,7 @@ var jsc = {
 
 
 	// get pointer's X/Y coordinates relative to target element
-	getRelPointerPos : function (e) {
+	getRelPointerPos : function (e : any) {
 		var target = e.target || e.srcElement;
 		var targetRect = target.getBoundingClientRect();
 
@@ -1197,8 +1197,8 @@ var jsc = {
 			// string with code
 			try {
 				callback = new Function (thisObj[prop]);
-			} catch (e) {
-				console.error(e);
+			} catch (e : any) {
+				console.error(e : any);
 			}
 		} else {
 			// function
@@ -1235,8 +1235,8 @@ var jsc = {
 	_capturedTarget : null,
 
 
-	onDocumentKeyUp : function (e) {
-		if (['Tab', 'Escape'].indexOf(jsc.eventKey(e)) !== -1) {
+	onDocumentKeyUp : function (e : any) {
+		if (['Tab', 'Escape'].indexOf(jsc.eventKey(e : any)) !== -1) {
 			if (jsc.picker && jsc.picker.owner) {
 				jsc.picker.owner.tryHide();
 			}
@@ -1244,17 +1244,17 @@ var jsc = {
 	},
 
 
-	onWindowResize : function (e) {
+	onWindowResize : function (e : any) {
 		jsc.redrawPosition();
 	},
 
 
-	onWindowScroll : function (e) {
+	onWindowScroll : function (e : any) {
 		jsc.redrawPosition();
 	},
 
 
-	onParentScroll : function (e) {
+	onParentScroll : function (e : any) {
 		// hide the picker when one of the parent elements is scrolled
 		if (jsc.picker && jsc.picker.owner) {
 			jsc.picker.owner.tryHide();
@@ -1262,7 +1262,7 @@ var jsc = {
 	},
 
 
-	onDocumentMouseDown : function (e) {
+	onDocumentMouseDown : function (e : any) {
 		var target = e.target || e.srcElement;
 
 		if (target.jscolor && target.jscolor instanceof jsc.pub) { // clicked targetElement -> show picker
@@ -1284,7 +1284,7 @@ var jsc = {
 	},
 
 
-	onPickerTouchStart : function (e) {
+	onPickerTouchStart : function (e : any) {
 		var target = e.target || e.srcElement;
 
 		if (jsc.getData(target, 'control')) {
@@ -1296,7 +1296,7 @@ var jsc = {
 	onControlPointerStart : function (e, target, controlName, pointerType) {
 		var thisObj = jsc.getData(target, 'instance');
 
-		jsc.preventDefault(e);
+		jsc.preventDefault(e : any);
 		jsc.captureTarget(target);
 
 		var registerDragEvents = function (doc, offset) {
@@ -1314,8 +1314,8 @@ var jsc = {
 			registerDragEvents(window.parent.window.document, ofs);
 		}
 
-		var abs = jsc.getAbsPointerPos(e);
-		var rel = jsc.getRelPointerPos(e);
+		var abs = jsc.getAbsPointerPos(e : any);
+		var rel = jsc.getRelPointerPos(e : any);
 		jsc._pointerOrigin = {
 			x: abs.x - rel.x,
 			y: abs.y - rel.y
@@ -1343,7 +1343,7 @@ var jsc = {
 
 
 	onDocumentPointerMove : function (e, target, controlName, pointerType, offset) {
-		return function (e) {
+		return function (e : any) {
 			var thisObj = jsc.getData(target, 'instance');
 			switch (controlName) {
 			case 'pad':
@@ -1364,7 +1364,7 @@ var jsc = {
 
 
 	onDocumentPointerEnd : function (e, target, controlName, pointerType) {
-		return function (e) {
+		return function (e : any) {
 			var thisObj = jsc.getData(target, 'instance');
 			jsc.detachGroupEvents('drag');
 			jsc.releaseTarget();
@@ -1378,7 +1378,7 @@ var jsc = {
 	},
 
 
-	onPaletteSampleClick : function (e) {
+	onPaletteSampleClick : function (e : any) {
 		var target = e.currentTarget;
 		var thisObj = jsc.getData(target, 'instance');
 		var color = jsc.getData(target, 'color');
@@ -1410,7 +1410,7 @@ var jsc = {
 
 
 	setPad : function (thisObj, e, ofsX, ofsY) {
-		var pointerAbs = jsc.getAbsPointerPos(e);
+		var pointerAbs = jsc.getAbsPointerPos(e : any);
 		var x = ofsX + pointerAbs.x - jsc._pointerOrigin.x - thisObj.padding - thisObj.controlBorderWidth;
 		var y = ofsY + pointerAbs.y - jsc._pointerOrigin.y - thisObj.padding - thisObj.controlBorderWidth;
 
@@ -1425,7 +1425,7 @@ var jsc = {
 
 
 	setSld : function (thisObj, e, ofsY) {
-		var pointerAbs = jsc.getAbsPointerPos(e);
+		var pointerAbs = jsc.getAbsPointerPos(e : any);
 		var y = ofsY + pointerAbs.y - jsc._pointerOrigin.y - thisObj.padding - thisObj.controlBorderWidth;
 		var yVal = 100 - (y * (100 / (thisObj.height - 1)));
 
@@ -1437,7 +1437,7 @@ var jsc = {
 
 
 	setASld : function (thisObj, e, ofsY) {
-		var pointerAbs = jsc.getAbsPointerPos(e);
+		var pointerAbs = jsc.getAbsPointerPos(e : any);
 		var y = ofsY + pointerAbs.y - jsc._pointerOrigin.y - thisObj.padding - thisObj.controlBorderWidth;
 		var yVal = 1.0 - (y * (1.0 / (thisObj.height - 1)));
 
@@ -1747,8 +1747,8 @@ var jsc = {
 				// getting a single option
 				try {
 					return getOption(arguments[0]);
-				} catch (e) {
-					console.warn(e);
+				} catch (e : any) {
+					console.warn(e : any);
 				}
 				return false;
 
@@ -1758,8 +1758,8 @@ var jsc = {
 					if (!setOption(arguments[0], arguments[1])) {
 						return false;
 					}
-				} catch (e) {
-					console.warn(e);
+				} catch (e : any) {
+					console.warn(e : any);
 					return false;
 				}
 				this.redraw(); // immediately redraws the picker, if it's displayed
@@ -1776,8 +1776,8 @@ var jsc = {
 							if (!setOption(opt, opts[opt])) {
 								success = false;
 							}
-						} catch (e) {
-							console.warn(e);
+						} catch (e : any) {
+							console.warn(e : any);
 							success = false;
 						}
 					}
@@ -3027,8 +3027,8 @@ var jsc = {
 				if (jsc.pub.options.hasOwnProperty(opt)) {
 					try {
 						setOption(opt, jsc.pub.options[opt]);
-					} catch (e) {
-						console.warn(e);
+					} catch (e : any) {
+						console.warn(e : any);
 					}
 				}
 			}
@@ -3069,8 +3069,8 @@ var jsc = {
 				if (jsc.pub.presets[pres].hasOwnProperty(opt)) {
 					try {
 						setOption(opt, jsc.pub.presets[pres][opt]);
-					} catch (e) {
-						console.warn(e);
+					} catch (e : any) {
+						console.warn(e : any);
 					}
 				}
 			}
@@ -3087,8 +3087,8 @@ var jsc = {
 				if (nonProperties.indexOf(opt) === -1) {
 					try {
 						setOption(opt, opts[opt]);
-					} catch (e) {
-						console.warn(e);
+					} catch (e : any) {
+						console.warn(e : any);
 					}
 				}
 			}
@@ -3379,9 +3379,9 @@ jsc.pub.install = function (rootNode) {
 
 	try {
 		jsc.installBySelector('[data-jscolor]', rootNode);
-	} catch (e) {
+	} catch (e : any) {
 		success = false;
-		console.warn(e);
+		console.warn(e : any);
 	}
 
 	// for backward compatibility with DEPRECATED installation using class name
@@ -3394,7 +3394,7 @@ jsc.pub.install = function (rootNode) {
 				),
 				rootNode
 			);
-		} catch (e) {}
+		} catch (e : any) {}
 	}
 
 	return success;

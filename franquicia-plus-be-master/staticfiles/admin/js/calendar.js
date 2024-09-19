@@ -114,7 +114,7 @@ depends on core.js for utility functions like removeChildren or quickElement
             }
 
             function calendarMonth(y, m) {
-                function onClick(e) {
+                function onClick(e : any) {
                     e.preventDefault();
                     callback(y, m, this.textContent);
                 }

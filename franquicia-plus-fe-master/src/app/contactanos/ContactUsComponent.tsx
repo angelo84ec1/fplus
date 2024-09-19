@@ -303,7 +303,7 @@ const ContactUsComponent = () => {
                     required
                     defaultValue=""
                     value={names}
-                    onChange={(e) => setNames(e.target.value)}
+                    onChange={(e : any) => setNames(e.target.value)}
                     type="text"
                     placeholder="Nombres"
                     className="py-3 pl-2 rounded-lg lg:w-44"
@@ -312,7 +312,7 @@ const ContactUsComponent = () => {
                     required
                     defaultValue=""
                     value={surnames}
-                    onChange={(e) => setSurnames(e.target.value)}
+                    onChange={(e : any) => setSurnames(e.target.value)}
                     type="text"
                     placeholder="Apellidos"
                     className="py-3 pl-2 rounded-lg lg:w-44"
@@ -323,7 +323,7 @@ const ContactUsComponent = () => {
                     required
                     defaultValue=""
                     value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    onChange={(e : any) => setEmail(e.target.value)}
                     type="text"
                     placeholder="Correo"
                     className="py-3 pl-2 rounded-lg lg:w-44"
@@ -332,7 +332,7 @@ const ContactUsComponent = () => {
                     required
                     defaultValue=""
                     value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
+                    onChange={(e : any) => setPhone(e.target.value)}
                     type="text"
                     placeholder="WhatsApp"
                     className="py-3 pl-2 rounded-lg lg:w-44"
@@ -343,7 +343,7 @@ const ContactUsComponent = () => {
                     required
                     defaultValue=""
                     value={country}
-                    onChange={(e) => setCountry(e.target.value)}
+                    onChange={(e : any) => setCountry(e.target.value)}
                     className="py-3 pl-2 rounded-lg lg:w-44 w-full"
                   >
                     <option value="">País de interés</option>
@@ -355,7 +355,7 @@ const ContactUsComponent = () => {
                     required
                     value={message}
                     defaultValue=""
-                    onChange={(e) => setMessage(e.target.value)}
+                    onChange={(e : any) => setMessage(e.target.value)}
                     name=""
                     id=""
                     placeholder="Déjanos tu mensaje"

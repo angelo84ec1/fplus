@@ -109,33 +109,33 @@ Requires core.js and SelectBox.js.
                 }
                 e.preventDefault();
             };
-            choose_all.addEventListener('click', function(e) {
+            choose_all.addEventListener('click', function(e : any) {
                 move_selection(e, this, SelectBox.move_all, field_id + '_from', field_id + '_to');
             });
-            add_link.addEventListener('click', function(e) {
+            add_link.addEventListener('click', function(e : any) {
                 move_selection(e, this, SelectBox.move, field_id + '_from', field_id + '_to');
             });
-            remove_link.addEventListener('click', function(e) {
+            remove_link.addEventListener('click', function(e : any) {
                 move_selection(e, this, SelectBox.move, field_id + '_to', field_id + '_from');
             });
-            clear_all.addEventListener('click', function(e) {
+            clear_all.addEventListener('click', function(e : any) {
                 move_selection(e, this, SelectBox.move_all, field_id + '_to', field_id + '_from');
             });
-            filter_input.addEventListener('keypress', function(e) {
+            filter_input.addEventListener('keypress', function(e : any) {
                 SelectFilter.filter_key_press(e, field_id);
             });
-            filter_input.addEventListener('keyup', function(e) {
+            filter_input.addEventListener('keyup', function(e : any) {
                 SelectFilter.filter_key_up(e, field_id);
             });
-            filter_input.addEventListener('keydown', function(e) {
+            filter_input.addEventListener('keydown', function(e : any) {
                 SelectFilter.filter_key_down(e, field_id);
             });
-            selector_div.addEventListener('change', function(e) {
+            selector_div.addEventListener('change', function(e : any) {
                 if (e.target.tagName === 'SELECT') {
                     SelectFilter.refresh_icons(field_id);
                 }
             });
-            selector_div.addEventListener('dblclick', function(e) {
+            selector_div.addEventListener('dblclick', function(e : any) {
                 if (e.target.tagName === 'OPTION') {
                     if (e.target.closest('select').id === field_id + '_to') {
                         SelectBox.move(field_id + '_to', field_id + '_from');
@@ -227,7 +227,7 @@ Requires core.js and SelectBox.js.
         }
     };
 
-    window.addEventListener('load', function(e) {
+    window.addEventListener('load', function(e : any) {
         document.querySelectorAll('select.selectfilter, select.selectfilterstacked').forEach(function(el) {
             const data = el.dataset;
             SelectFilter.init(el.id, data.fieldName, parseInt(data.isStacked, 10));

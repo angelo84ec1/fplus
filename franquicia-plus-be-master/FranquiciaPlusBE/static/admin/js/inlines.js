@@ -61,7 +61,7 @@
             addButton.on('click', addInlineClickHandler);
         };
 
-        const addInlineClickHandler = function(e) {
+        const addInlineClickHandler = function(e : any) {
             e.preventDefault();
             const template = $("#" + options.prefix + "-empty");
             const row = template.clone(true);

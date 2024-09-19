@@ -902,7 +902,7 @@ const BrandComponent = ({ detalleMarca }: props) => {
                           className="form-control"
                           name="nombre"
                           value={name}
-                          onChange={(e) => setName(e.target.value)}
+                          onChange={(e : any) => setName(e.target.value)}
                           placeholder="Nombre"
                           required
                         />
@@ -913,7 +913,7 @@ const BrandComponent = ({ detalleMarca }: props) => {
                           className="form-control"
                           name="apellido"
                           value={surname}
-                          onChange={(e) => setSurname(e.target.value)}
+                          onChange={(e : any) => setSurname(e.target.value)}
                           placeholder="Apellido"
                           required
                         />
@@ -961,7 +961,7 @@ const BrandComponent = ({ detalleMarca }: props) => {
                           id="province"
                           name="province"
                           value={province}
-                          onChange={(e) => setProvince(e.target.value)}
+                          onChange={(e : any) => setProvince(e.target.value)}
                         >
                           <option value="" disabled selected>
                             Provincia de Interés
@@ -996,7 +996,7 @@ const BrandComponent = ({ detalleMarca }: props) => {
                           className="form-control"
                           name="email"
                           value={email}
-                          onChange={(e) => setEmail(e.target.value)}
+                          onChange={(e : any) => setEmail(e.target.value)}
                           id="InputEmail1"
                           placeholder="Correo electrónico"
                           required
@@ -1008,7 +1008,7 @@ const BrandComponent = ({ detalleMarca }: props) => {
                         className="form-control"
                         name="comentarios"
                         value={message}
-                        onChange={(e) => setMessage(e.target.value)}
+                        onChange={(e : any) => setMessage(e.target.value)}
                         required
                         id="exampleFormControlTextarea1"
                         placeholder="Comentarios"
@@ -1020,7 +1020,7 @@ const BrandComponent = ({ detalleMarca }: props) => {
                       name="nombremarca"
                       type="hidden"
                       value={brand}
-                      onChange={(e) => setBrand(brandDetails?.nombre || "")}
+                      onChange={(e : any) => setBrand(brandDetails?.nombre || "")}
                     />
                     <div className="flex justify-center py-12 mb-10">
                       <button

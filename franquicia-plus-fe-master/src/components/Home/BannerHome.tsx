@@ -210,7 +210,7 @@ export default function BannerHome() {
             <div className="w-full mt-0 lg:flex lg:justify-center lg:px-[5px]">
               <select
                 value={ubicacionElegida}
-                onChange={(e) => setUbicacionElegida(e.target.value)}
+                onChange={(e : any) => setUbicacionElegida(e.target.value)}
                 className="card-select inline-block text-2xl lg:text-base"
               >
                 <option value="" selected>
@@ -226,7 +226,7 @@ export default function BannerHome() {
             <div className="w-full mt-0">
               <select
                 value={categoriaElegida}
-                onChange={(e) => setCategoriaElegida(e.target.value)}
+                onChange={(e : any) => setCategoriaElegida(e.target.value)}
                 className="card-select inline-block text-2xl lg:text-base"
               >
                 <option value="" selected>
@@ -242,7 +242,7 @@ export default function BannerHome() {
             <div className="w-full mt-0">
               <select
                 value={inversionElegida}
-                onChange={(e) => setInversionElegida(e.target.value)}
+                onChange={(e : any) => setInversionElegida(e.target.value)}
                 className="card-select inline-block text-2xl lg:text-base"
               >
                 <option value="" selected>

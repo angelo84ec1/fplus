@@ -1258,7 +1258,7 @@ S2.define('select2/results',[
     });
 
     if ($.fn.mousewheel) {
-      this.$results.on('mousewheel', function (e) {
+      this.$results.on('mousewheel', function (e : any) {
         var top = self.$results.scrollTop();
 
         var bottom = self.$results.get(0).scrollHeight - top + e.deltaY;
@@ -1520,7 +1520,7 @@ S2.define('select2/selection/base',[
 
   BaseSelection.prototype._attachCloseHandler = function (container) {
 
-    $(document.body).on('mousedown.select2.' + container.id, function (e) {
+    $(document.body).on('mousedown.select2.' + container.id, function (e : any) {
       var $target = $(e.target);
 
       var $select = $target.closest('.select2');
@@ -4451,7 +4451,7 @@ S2.define('select2/dropdown/attachBody',[
     });
 
     $(window).on(scrollEvent + ' ' + resizeEvent + ' ' + orientationEvent,
-      function (e) {
+      function (e : any) {
       self._positionDropdown();
       self._resizeDropdown();
     });
@@ -5168,7 +5168,7 @@ S2.define('select2/defaults',[
         try {
           // Try to load it with the original name
           languageData = Translation.loadPath(language);
-        } catch (e) {
+        } catch (e : any) {
           try {
             // If we couldn't load it, check if it wasn't the full path
             language = this.defaults.amdLanguageBase + language;

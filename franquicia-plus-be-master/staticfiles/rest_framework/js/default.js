@@ -9,11 +9,11 @@ $(document).ready(function() {
   });
 
   // Deal with rounded tab styling after tab clicks.
-  $('a[data-toggle="tab"]:first').on('shown', function(e) {
+  $('a[data-toggle="tab"]:first').on('shown', function(e : any) {
     $(e.target).parents('.tabbable').addClass('first-tab-active');
   });
 
-  $('a[data-toggle="tab"]:not(:first)').on('shown', function(e) {
+  $('a[data-toggle="tab"]:not(:first)').on('shown', function(e : any) {
     $(e.target).parents('.tabbable').removeClass('first-tab-active');
   });
 

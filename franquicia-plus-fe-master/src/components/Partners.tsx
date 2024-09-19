@@ -1,18 +1,18 @@
-const handleCountryChange = (e) => {
-  const selectedCountry = e.target.value;
-  setCountry(selectedCountry);
+// const handleCountryChange = (e : any) => {
+//   const selectedCountry = e.target.value;
+//   setCountry(selectedCountry);
 
-  // Buscar los datos del país seleccionado (código y bandera)
-  const selectedCountryData = countries.find(
-    (c) => c.name === selectedCountry
-  );
+//   // Buscar los datos del país seleccionado (código y bandera)
+//   const selectedCountryData = countries.find(
+//     (c) => c.name === selectedCountry
+//   );
 
-  if (selectedCountryData) {
-    setPhoneCode(selectedCountryData.code); // Actualiza el código de teléfono
-    setFlag(selectedCountryData.flag);     // Actualiza la bandera
-    setPhone(selectedCountryData.code);    // Inicializa el campo de teléfono con el nuevo código
-  }
-};
+//   if (selectedCountryData) {
+//     setPhoneCode(selectedCountryData.code); // Actualiza el código de teléfono
+//     setFlag(selectedCountryData.flag);     // Actualiza la bandera
+//     setPhone(selectedCountryData.code);    // Inicializa el campo de teléfono con el nuevo código
+//   }
+// };
 /* eslint-disable @next/next/no-img-element */
 import Image from "next/image";
 import { Partner } from "@/types/Partner";
