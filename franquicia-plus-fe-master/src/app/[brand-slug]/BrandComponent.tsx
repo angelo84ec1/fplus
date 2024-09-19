@@ -67,7 +67,7 @@ const BrandComponent = ({ detalleMarca }: props) => {
   const pathname = usePathname();
 
 
-   const handleCountryChange = (e) => {
+   const handleCountryChange = (e : any) => {
   const selectedCountry = e.target.value;
   setCountry(selectedCountry);
 
@@ -83,7 +83,7 @@ const BrandComponent = ({ detalleMarca }: props) => {
   }
 };
 
-    const handlePhoneChange = (e) => {
+    const handlePhoneChange = (e : any) => {
     const phoneValue = e.target.value.replace(phoneCode, ''); // Eliminar el código al editar
     setPhone(`${phoneCode}${phoneValue}`); // Mantener el código y actualizar el número
   };
