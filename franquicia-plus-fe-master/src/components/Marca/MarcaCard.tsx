@@ -75,7 +75,7 @@ const Marca = ({ marca }: props) => {
                 type="button"
                 className="text-xs text-white absolute border-1 px-4 py-1 rounded border-transparent btn-popular bg-[#0d132f] mt-3 ms-3"
               >
-                {marca.estado.nombre}
+                {marca.estado.nombre === "Popular"? "Premium" : marca.estado.nombre}
               </button>
             )}
             {pathname === "/" && marca.estado.nombre === "Popular" && (
@@ -147,10 +147,10 @@ const Marca = ({ marca }: props) => {
               style={{ fontFamily: "Mukata Mahee Bold" }}
               className="color-principal tipo-letra d-flex justify-content-end price-bold text-[#0d132f]"
             >
-              {Number(marca?.precio).toLocaleString("en-US", {
+              {Number(marca?.precio/1000).toLocaleString("en-US", {
                 style: "currency",
                 currency: "USD",
-                maximumFractionDigits: 0,
+                maximumFractionDigits: 3,
               })}
             </p>
           </div>
