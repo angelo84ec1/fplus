@@ -147,11 +147,11 @@ const Marca = ({ marca }: props) => {
               style={{ fontFamily: "Mukata Mahee Bold" }}
               className="color-principal tipo-letra d-flex justify-content-end price-bold text-[#0d132f]"
             >
-              {Number(marca?.precio/1000).toLocaleString("en-US", {
+              {Number(marca?.precio).toLocaleString("en-US", {
                 style: "currency",
                 currency: "USD",
-                maximumFractionDigits: 3,
-              })}
+                maximumFractionDigits: 0,
+              }).replace(",",".")}
             </p>
           </div>
           <p
