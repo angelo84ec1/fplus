@@ -67,21 +67,21 @@ const BrandComponent = ({ detalleMarca }: props) => {
   const pathname = usePathname();
 
 
-   const handleCountryChange = (e : any) => {
-  const selectedCountry = e.target.value;
-  setCountry(selectedCountry);
-
-  // Buscar los datos del país seleccionado (código y bandera)
-  const selectedCountryData = countries.find(
-    (c) => c.name === selectedCountry
-  );
-
-  if (selectedCountryData) {
-    setPhoneCode(selectedCountryData.code); // Actualiza el código de teléfono
-    setFlag(selectedCountryData.flag);     // Actualiza la bandera
-    setPhone(selectedCountryData.code);    // Inicializa el campo de teléfono con el nuevo código
-  }
-};
+  const handleCountryChange = (e : any) => {
+    const selectedCountry = e.target.value;
+    setCountry(selectedCountry);
+  
+    // Buscar los datos del país seleccionado (código y bandera)
+    const selectedCountryData = countries.find(
+      (c) => c.name === selectedCountry
+    );
+  
+    if (selectedCountryData) {
+      setPhoneCode(selectedCountryData.code); // Actualiza el código de teléfono
+      setFlag(selectedCountryData.flag);     // Actualiza la bandera
+      setPhone(selectedCountryData.code);    // Inicializa el campo de teléfono con el nuevo código
+    }
+  };
 
     const handlePhoneChange = (e : any) => {
     const phoneValue = e.target.value.replace(phoneCode, ''); // Eliminar el código al editar
