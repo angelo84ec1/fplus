@@ -47,6 +47,10 @@ const countries = [
   { name: 'Colombia', code: '+57', flag: 'https://upload.wikimedia.org/wikipedia/commons/2/21/Flag_of_Colombia.svg' },
   { name: 'México', code: '+52', flag: 'https://upload.wikimedia.org/wikipedia/commons/f/fc/Flag_of_Mexico.svg' },
   { name: 'Perú', code: '+51', flag: 'https://upload.wikimedia.org/wikipedia/commons/c/cf/Flag_of_Peru.svg' },
+  { name: 'Usa', code: '+1', flag: 'https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg' },
+  { name: 'Francia', code: '+33', flag: 'https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg' },
+  { name: 'Italia', code: '+39', flag: 'https://upload.wikimedia.org/wikipedia/commons/0/03/Flag_of_Italy.svg' },
+  { name: 'España', code: '+34', flag: 'https://upload.wikimedia.org/wikipedia/commons/7/70/Flag_of_Spain_%28civil%29.svg' },
   // Agrega más países si es necesario
 ];
 
@@ -67,23 +71,23 @@ const BrandComponent = ({ detalleMarca }: props) => {
   const pathname = usePathname();
 
 
-   const handleCountryChange = (e) => {
-  const selectedCountry = e.target.value;
-  setCountry(selectedCountry);
+  const handleCountryChange = (e: any) => {
+    const selectedCountry = e.target.value;
+    setCountry(selectedCountry);
 
-  // Buscar los datos del país seleccionado (código y bandera)
-  const selectedCountryData = countries.find(
-    (c) => c.name === selectedCountry
-  );
+    // Buscar los datos del país seleccionado (código y bandera)
+    const selectedCountryData = countries.find(
+      (c) => c.name === selectedCountry
+    );
 
-  if (selectedCountryData) {
-    setPhoneCode(selectedCountryData.code); // Actualiza el código de teléfono
-    setFlag(selectedCountryData.flag);     // Actualiza la bandera
-    setPhone(selectedCountryData.code);    // Inicializa el campo de teléfono con el nuevo código
-  }
-};
+    if (selectedCountryData) {
+      setPhoneCode(selectedCountryData.code); // Actualiza el código de teléfono
+      setFlag(selectedCountryData.flag);     // Actualiza la bandera
+      setPhone(selectedCountryData.code);    // Inicializa el campo de teléfono con el nuevo código
+    }
+  };
 
-    const handlePhoneChange = (e) => {
+  const handlePhoneChange = (e: any) => {
     const phoneValue = e.target.value.replace(phoneCode, ''); // Eliminar el código al editar
     setPhone(`${phoneCode}${phoneValue}`); // Mantener el código y actualizar el número
   };
@@ -123,7 +127,7 @@ const BrandComponent = ({ detalleMarca }: props) => {
         brand;
 
       const response = axios.post("/marca/send_email/", parametrosn);
-        console.log(phone)
+      console.log(phone)
       axios
         .post("https://api.escala.com/new-lead/", {
           contact_first_name: name,
@@ -316,9 +320,8 @@ const BrandComponent = ({ detalleMarca }: props) => {
   const CustomDot = ({ index, onClick, active }: DotProps) => {
     return (
       <li
-        className={`block lg:hidden w-3 mx-2 cursor-pointer aspect-square rounded-full ${
-          active ? "bg-black" : "bg-[#d6d6d6]"
-        }`}
+        className={`block lg:hidden w-3 mx-2 cursor-pointer aspect-square rounded-full ${active ? "bg-black" : "bg-[#d6d6d6]"
+          }`}
         onClick={() => onClick!()}
       ></li>
     );
@@ -902,7 +905,7 @@ const BrandComponent = ({ detalleMarca }: props) => {
                           className="form-control"
                           name="nombre"
                           value={name}
-                          onChange={(e) => setName(e.target.value)}
+                          onChange={(e: any) => setName(e.target.value)}
                           placeholder="Nombre"
                           required
                         />
@@ -913,7 +916,7 @@ const BrandComponent = ({ detalleMarca }: props) => {
                           className="form-control"
                           name="apellido"
                           value={surname}
-                          onChange={(e) => setSurname(e.target.value)}
+                          onChange={(e: any) => setSurname(e.target.value)}
                           placeholder="Apellido"
                           required
                         />
@@ -929,21 +932,21 @@ const BrandComponent = ({ detalleMarca }: props) => {
                           />
                         </div>
                         <select
-                            className="form-control cursor-pointer"
-                            id="pais-interes"
-                            name="pais"
-                            value={country}
-                            onChange={handleCountryChange}
-                          >
-                            <option value="" disabled>
-                              País de Interés
+                          className="form-control cursor-pointer"
+                          id="pais-interes"
+                          name="pais"
+                          value={country}
+                          onChange={handleCountryChange}
+                        >
+                          <option value="" disabled>
+                            País de Interés
+                          </option>
+                          {countries.map((country) => (
+                            <option value={country.name} key={country.code}>
+                              {country.name}
                             </option>
-                            {countries.map((country) => (
-                              <option value={country.name} key={country.code}>
-                                {country.name}
-                              </option>
-                            ))}
-                          </select>
+                          ))}
+                        </select>
                       </div>
 
                       <div className="relative form-group lg:w-1/2 w-full py-2 px-2 cursor-pointer">
@@ -961,7 +964,7 @@ const BrandComponent = ({ detalleMarca }: props) => {
                           id="province"
                           name="province"
                           value={province}
-                          onChange={(e) => setProvince(e.target.value)}
+                          onChange={(e: any) => setProvince(e.target.value)}
                         >
                           <option value="" disabled selected>
                             Provincia de Interés
@@ -973,7 +976,7 @@ const BrandComponent = ({ detalleMarca }: props) => {
                           ))}
                         </select>
                       </div>
-                        <div className="form-group lg:w-1/2 w-full py-2 px-2 relative">
+                      <div className="form-group lg:w-1/2 w-full py-2 px-2 relative">
                         <div className="flex items-center border rounded-lg overflow-hidden">
                           <div className="flex items-center px-3 border-r">
                             <img src={flag} alt={`${country} Flag`} className="w-6 h-4 mr-2" />
@@ -996,7 +999,7 @@ const BrandComponent = ({ detalleMarca }: props) => {
                           className="form-control"
                           name="email"
                           value={email}
-                          onChange={(e) => setEmail(e.target.value)}
+                          onChange={(e: any) => setEmail(e.target.value)}
                           id="InputEmail1"
                           placeholder="Correo electrónico"
                           required
@@ -1008,7 +1011,7 @@ const BrandComponent = ({ detalleMarca }: props) => {
                         className="form-control"
                         name="comentarios"
                         value={message}
-                        onChange={(e) => setMessage(e.target.value)}
+                        onChange={(e: any) => setMessage(e.target.value)}
                         required
                         id="exampleFormControlTextarea1"
                         placeholder="Comentarios"
@@ -1020,7 +1023,7 @@ const BrandComponent = ({ detalleMarca }: props) => {
                       name="nombremarca"
                       type="hidden"
                       value={brand}
-                      onChange={(e) => setBrand(brandDetails?.nombre || "")}
+                      onChange={(e: any) => setBrand(brandDetails?.nombre || "")}
                     />
                     <div className="flex justify-center py-12 mb-10">
                       <button

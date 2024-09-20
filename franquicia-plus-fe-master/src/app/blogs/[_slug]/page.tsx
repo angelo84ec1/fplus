@@ -55,7 +55,7 @@ const Blogs = () => {
       if (article) {
         setSelectedCategory(article?.category);
       }
-    } catch (e) {
+    } catch (e: any) {
       console.log(e);
     }
   }, [article]);

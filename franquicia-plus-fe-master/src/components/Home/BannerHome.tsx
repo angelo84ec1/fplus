@@ -53,25 +53,25 @@ export default function BannerHome() {
   };
 
   const filtroBuscar = (category?: string, location?: string, inversion?: string) => {
-  let queryParameters: { [key: string]: string } = {};
+    let queryParameters: { [key: string]: string } = {};
 
-  // Solo agrega parámetros si tienen valor
-  if (category) {
-    queryParameters['categoria'] = category;
-  }
-  if (location) {
-    queryParameters['ubicacion'] = location;
-  }
-  if (inversion) {
-    queryParameters['inversion'] = inversion;
-  }
+    // Solo agrega parámetros si tienen valor
+    if (category) {
+      queryParameters['categoria'] = category;
+    }
+    if (location) {
+      queryParameters['ubicacion'] = location;
+    }
+    if (inversion) {
+      queryParameters['inversion'] = inversion;
+    }
 
-  // Crea la querystring a partir de los parámetros válidos
-  const queryString = new URLSearchParams(queryParameters).toString();
-  const targetUrl = `/franquicias-en-ecuador${queryString ? `?${queryString}` : ''}`;
+    // Crea la querystring a partir de los parámetros válidos
+    const queryString = new URLSearchParams(queryParameters).toString();
+    const targetUrl = `/franquicias-en-ecuador${queryString ? `?${queryString}` : ''}`;
 
-  router.push(targetUrl);
-};
+    router.push(targetUrl);
+  };
 
 
   return (
@@ -210,7 +210,7 @@ export default function BannerHome() {
             <div className="w-full mt-0 lg:flex lg:justify-center lg:px-[5px]">
               <select
                 value={ubicacionElegida}
-                onChange={(e) => setUbicacionElegida(e.target.value)}
+                onChange={(e: any) => setUbicacionElegida(e.target.value)}
                 className="card-select inline-block text-2xl lg:text-base"
               >
                 <option value="" selected>
@@ -226,7 +226,7 @@ export default function BannerHome() {
             <div className="w-full mt-0">
               <select
                 value={categoriaElegida}
-                onChange={(e) => setCategoriaElegida(e.target.value)}
+                onChange={(e: any) => setCategoriaElegida(e.target.value)}
                 className="card-select inline-block text-2xl lg:text-base"
               >
                 <option value="" selected>
@@ -242,7 +242,7 @@ export default function BannerHome() {
             <div className="w-full mt-0">
               <select
                 value={inversionElegida}
-                onChange={(e) => setInversionElegida(e.target.value)}
+                onChange={(e: any) => setInversionElegida(e.target.value)}
                 className="card-select inline-block text-2xl lg:text-base"
               >
                 <option value="" selected>

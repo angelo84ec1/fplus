@@ -17,7 +17,7 @@ export async function middleware(request: NextRequest) {
     "somos-franquicia-plus-consultora",
   ];
 
-  
+
   // aqui tienes q hacer la llamada a la api y ver si existe o no
   const pathChunks = request.nextUrl.pathname.split("/");
   const data = { extra: "dfgsdgds" };
@@ -33,7 +33,7 @@ export async function middleware(request: NextRequest) {
     }
   }
 
-  if(pathChunks[1] === 'sitemap.xl'){
+  if (pathChunks[1] === 'sitemap.xl') {
     return
   }
 
@@ -41,12 +41,12 @@ export async function middleware(request: NextRequest) {
     const blogUrl = pathChunks[2];
     try {
       require(`@/static/Content/BlogPost/${blogUrl}.json`);
-    } catch (e) {
+    } catch (e: any) {
       return NextResponse.next({ status: 404 });
     }
   }
 
-  if(pathChunks.length === 3 && pathChunks[1] !== 'blogs'){
+  if (pathChunks.length === 3 && pathChunks[1] !== 'blogs') {
     return NextResponse.next({ status: 404 });
   }
 

@@ -46,7 +46,7 @@ const HomePageComponent = ({ popularBrands, newBrands }: props) => {
       if (
         window.scrollY > 100 &&
         window.scrollY <
-          document.documentElement.scrollHeight - window.innerHeight - 100
+        document.documentElement.scrollHeight - window.innerHeight - 100
       ) {
         setIsAtBottom(false);
       } else {
@@ -116,11 +116,10 @@ const HomePageComponent = ({ popularBrands, newBrands }: props) => {
                       <li
                         onChange={() => handleCategoryChange(category.value)}
                         key={category.id}
-                        className={`${
-                          selectedCategory === category.value
+                        className={`${selectedCategory === category.value
                             ? "text-[#CC4B3D]"
                             : "text-[#0d132f]"
-                        } opcion flex  hover:text-[#CC4B3D]`}
+                          } opcion flex  hover:text-[#CC4B3D]`}
                       >
                         <label
                           className="border-0 text-xs lg:text-base lg:px-10 px-0 gap-1 flex justify-center items-center"
@@ -155,10 +154,10 @@ const HomePageComponent = ({ popularBrands, newBrands }: props) => {
             </div>
           </div>
         </section>
-        <section className="h-[27.5em] flex items-center bg-[#CC4B3D] w-full">
+        <section className="h-[24.5em] flex items-center bg-[#CC4B3D] w-full">
           <a href=" https://experiencia.escala.com/escala-franquiciaplus" target="_blank" rel="noopener noreferrer">
-            <video className="images" loop autoPlay preload="" muted playsInline>
-              <source type="video/mp4" src="/fondo.mp4" />
+            <video className="images" loop autoPlay preload="auto" muted playsInline>
+              <source type="video/mp4" src="/video.mp4" />
             </video>
           </a>
         </section>
@@ -218,9 +217,8 @@ const HomePageComponent = ({ popularBrands, newBrands }: props) => {
       </main>
       <ChatBot />
       <div
-        className={`fixed bottom-2 left-0 right-0 ${
-          isAtBottom ? "hidden" : "flex"
-        } justify-center z-30`}
+        className={`fixed bottom-2 left-0 right-0 ${isAtBottom ? "hidden" : "flex"
+          } justify-center z-30`}
       >
         <div className="animate-bounce lg:h-[10vh] h-[5vh]">
           <Image

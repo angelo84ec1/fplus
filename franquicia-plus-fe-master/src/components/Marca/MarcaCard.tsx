@@ -75,7 +75,7 @@ const Marca = ({ marca }: props) => {
                 type="button"
                 className="text-xs text-white absolute border-1 px-4 py-1 rounded border-transparent btn-popular bg-[#0d132f] mt-3 ms-3"
               >
-                {marca.estado.nombre}
+                {marca.estado.nombre === "Popular" ? "Premium" : marca.estado.nombre}
               </button>
             )}
             {pathname === "/" && marca.estado.nombre === "Popular" && (
@@ -83,7 +83,7 @@ const Marca = ({ marca }: props) => {
                 type="button"
                 className="text-xs text-white absolute border-1 px-4 py-1 rounded border-transparent btn-popular bg-[#0d132f] mt-3 ms-3"
               >
-                {marca.estado.nombre}
+                {marca.estado.nombre === "Popular" ? "Premium" : marca.estado.nombre}
               </button>
             )}
             <div className="w-full">
@@ -151,7 +151,7 @@ const Marca = ({ marca }: props) => {
                 style: "currency",
                 currency: "USD",
                 maximumFractionDigits: 0,
-              })}
+              }).replace(",", ".")}
             </p>
           </div>
           <p

@@ -1,4 +1,4 @@
-const handleCountryChange = (e) => {
+/*const handleCountryChange = (e: any) => {
   const selectedCountry = e.target.value;
   setCountry(selectedCountry);
 
@@ -12,7 +12,7 @@ const handleCountryChange = (e) => {
     setFlag(selectedCountryData.flag);     // Actualiza la bandera
     setPhone(selectedCountryData.code);    // Inicializa el campo de teléfono con el nuevo código
   }
-};
+};*/
 /* eslint-disable @next/next/no-img-element */
 import Image from "next/image";
 import { Partner } from "@/types/Partner";

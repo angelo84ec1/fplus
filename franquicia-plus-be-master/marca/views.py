@@ -14,13 +14,13 @@ def index(request):
     return HttpResponse("Hello World")
 
 
-sg = SendGridAPIClient(
-    "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"
-)
+sg = SendGridAPIClient(api_key="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")
+
 
 
 # @csrf_protect
 def contacto(request):
+    print("request")
     nombre = request.POST.get("nombre")
     apellido = request.POST.get("apellido")
     pais = request.POST.get("pais")
@@ -37,7 +37,7 @@ def contacto(request):
         and email != ""
         and comentarios != ""
     ):
-        subjetct = "Mensaje desde franquiciaplus.com/" + nombremarca
+        subjtect = "Mensaje desde franquiciaplus.com/" + nombremarca
         message = "Este mensaje fue enviado por: " + nombre + " " + apellido + "\n"
         message += "Su e-mail es: " + email + "\n"
         message += "Mensaje: " + comentarios + "\n"
@@ -56,7 +56,7 @@ def contacto(request):
         email = Mail(
             from_email=email_from,
             to_emails=recipient_list,
-            subject=subjetct,
+            subject=subjtect,
             html_content=message,
         )
         response = sg.send(email)
