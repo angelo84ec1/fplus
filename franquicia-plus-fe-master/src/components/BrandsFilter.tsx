@@ -124,7 +124,7 @@ const BrandsFilter = ({
             ))}
           </select>
         </div>
-        {/* El resto de tu código sigue igual */}
+
       </div>
     </>
   );

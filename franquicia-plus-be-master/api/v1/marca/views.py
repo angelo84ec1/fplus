@@ -1,6 +1,7 @@
 from django.utils.decorators import method_decorator
 from django.views.decorators.cache import cache_page
 from rest_framework import viewsets
+from rest_framework.permissions import AllowAny
 from rest_framework.filters import OrderingFilter, SearchFilter
 from django_filters.rest_framework import DjangoFilterBackend
 from pagination import MarcaPagination
@@ -13,6 +14,8 @@ from marca.models import (
     Ubicacion,
     Detalle_Marca,
 )
+import logging
+
 from api.v1.marca.serializers import (
     DirectorioSerializer,
     EstadoSerializer,
@@ -22,7 +25,7 @@ from api.v1.marca.serializers import (
     InversionSerializer,
     DetalleMarcaSerializer,
 )
-
+logger = logging.getLogger(__name__)
 
 class MarcaViewSet(viewsets.ModelViewSet):
     # Cache page for the requested url for 1 hour
@@ -37,6 +40,7 @@ class MarcaViewSet(viewsets.ModelViewSet):
     ordering = ["prioridad", "-created_at"]
     search_fields = ["nombre", "categoria__nombre", "precio"]
     filterset_fields = {
+
         "precio": ["gte", "lte"],
         "categoria__nombre": ["exact"],
         "estado__nombre": ["exact"],
@@ -44,6 +48,8 @@ class MarcaViewSet(viewsets.ModelViewSet):
         "directorio__nombre": ["exact"],
         "inversion__nombre_url": ["exact"],
     }
+    logger.debug(filterset_fields)
+
     queryset = (
         Marca.objects.all()
         .prefetch_related("ubicacion", "directorio")
@@ -54,6 +60,7 @@ class MarcaViewSet(viewsets.ModelViewSet):
             "detalle_marca",
         )
     )
+
 
 
 class CategoriaViewSet(viewsets.ModelViewSet):
@@ -86,11 +93,12 @@ class InversionViewSet(viewsets.ModelViewSet):
     def dispatch(self, *args, **kwargs):
         return super().dispatch(*args, **kwargs)
 
+
+    permission_classes = [AllowAny]  # Permitir acceso temporalmente para todos
     serializer_class = InversionSerializer
     filter_backends = [OrderingFilter]
     ordering = ["id"]
     queryset = Inversion.objects.all()
-
 
 class EstadoViewSet(viewsets.ModelViewSet):
     # Cache page for the requested url for 1 hour

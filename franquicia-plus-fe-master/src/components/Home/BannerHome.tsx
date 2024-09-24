@@ -62,13 +62,31 @@ export default function BannerHome() {
     if (location) {
       queryParameters['ubicacion'] = location;
     }
-    if (inversion) {
-      queryParameters['inversion'] = inversion;
-    }
+    console.log(typeof inversion);
 
+    if (inversion) {
+      //queryParameters['inversion'] = inversion;
+      if (inversion=='120000') {
+        queryParameters['precio__gte']='120000';
+
+
+
+        }else{
+           queryParameters['precio__gte']=inversion.split('-')[0];
+
+           queryParameters['precio__lte']=inversion.split('-')[2];
+
+
+            }
+
+
+
+    }
+    console.log(queryParameters)
     // Crea la querystring a partir de los parámetros válidos
     const queryString = new URLSearchParams(queryParameters).toString();
     const targetUrl = `/franquicias-en-ecuador${queryString ? `?${queryString}` : ''}`;
+
 
     router.push(targetUrl);
   };

@@ -14,7 +14,7 @@ def index(request):
     return HttpResponse("Hello World")
 
 
-sg = SendGridAPIClient(api_key="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")
+sg = SendGridAPIClient(api_key="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")
 
 
 
