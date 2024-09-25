@@ -4,7 +4,7 @@ import Carousel from "react-bootstrap/Carousel";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
-import Cases from "@/assets/fotos-fp/Casos de Éxito Más Relevantes Nueva Plataforma/Cases";
+import Cases from "@/assets/fotos-fp/Casos/Cases";
 
 const FrachisesPage = () => {
   useEffect(() => {
@@ -114,7 +114,7 @@ const FrachisesPage = () => {
                 width={5000}
                 height={5000}
                 draggable={false}
-                src={Cases.Café}
+                src={Cases.Cafe}
                 alt={""}
                 className="images"
               />
@@ -127,7 +127,7 @@ const FrachisesPage = () => {
                 width={5000}
                 height={5000}
                 draggable={false}
-                src={Cases.Cedeños}
+                src={Cases.Cedenos}
                 alt={""}
                 className="images"
               />
@@ -296,7 +296,7 @@ const FrachisesPage = () => {
                 width={5000}
                 height={5000}
                 draggable={false}
-                src={Cases.Jabonería}
+                src={Cases.Jaboneria}
                 alt={""}
                 className="images"
               />
@@ -309,7 +309,7 @@ const FrachisesPage = () => {
                 width={5000}
                 height={5000}
                 draggable={false}
-                src={Cases.Jürgen}
+                src={Cases.Jurgen}
                 alt={""}
                 className="images"
               />
@@ -343,7 +343,7 @@ const FrachisesPage = () => {
                 width={5000}
                 height={5000}
                 draggable={false}
-                src={Cases.Tártaro}
+                src={Cases.Tartaro}
                 alt={""}
                 className="images"
               />
@@ -463,7 +463,7 @@ const FrachisesPage = () => {
                 width={5000}
                 height={5000}
                 draggable={false}
-                src={Cases.Monobolón}
+                src={Cases.Monobolon}
                 alt={""}
                 className="images"
               />
