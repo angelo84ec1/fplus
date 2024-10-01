@@ -34,6 +34,7 @@ import { CgSpinnerTwoAlt } from "react-icons/cg";
 
 const getUbications = async () => {
   const { data } = await axios.get("/api/v1/ubicacion/");
+  console.log(data)
   return data;
 };
 
@@ -48,11 +49,12 @@ const countries = [
   { name: 'México', code: '+52', flag: 'https://upload.wikimedia.org/wikipedia/commons/f/fc/Flag_of_Mexico.svg' },
   { name: 'Perú', code: '+51', flag: 'https://upload.wikimedia.org/wikipedia/commons/c/cf/Flag_of_Peru.svg' },
   { name: 'Usa', code: '+1', flag: 'https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg' },
-  { name: 'Francia', code: '+33', flag: 'https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg' },
+  { name: 'Francia', code: '+33', flag: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Flag_of_France_%281794%E2%80%931815%2C_1830%E2%80%931974%2C_2020%E2%80%93present%29.svg/300px-Flag_of_France_%281794%E2%80%931815%2C_1830%E2%80%931974%2C_2020%E2%80%93present%29.svg.png' },
   { name: 'Italia', code: '+39', flag: 'https://upload.wikimedia.org/wikipedia/commons/0/03/Flag_of_Italy.svg' },
   { name: 'España', code: '+34', flag: 'https://upload.wikimedia.org/wikipedia/commons/7/70/Flag_of_Spain_%28civil%29.svg' },
   // Agrega más países si es necesario
 ];
+
 
 const BrandComponent = ({ detalleMarca }: props) => {
   const brandDetails = detalleMarca;
@@ -888,158 +890,167 @@ const BrandComponent = ({ detalleMarca }: props) => {
                 </p>
               </div>
               <div className="flex justify-center" data-aos="fade-down">
-                <p
-                  style={{ fontFamily: "Mukata Mahee Bold" }}
-                  className="text-[35px] py-[16.25px] text-center"
-                >
-                  CONTÁCTANOS
-                </p>
-              </div>
-              <div className="flex justify-center">
-                <div className="lg:w-[60%] w-[90%]">
-                  <form onSubmit={handleSubmit}>
-                    <div className="flex lg:flex-wrap lg:flex-row flex-col">
-                      <div className="form-group lg:w-1/2 w-full py-2 px-2">
-                        <input
-                          type="text"
-                          className="form-control"
-                          name="nombre"
-                          value={name}
-                          onChange={(e: any) => setName(e.target.value)}
-                          placeholder="Nombre"
-                          required
-                        />
-                      </div>
-                      <div className="form-group lg:w-1/2 w-full py-2 px-2">
-                        <input
-                          type="text"
-                          className="form-control"
-                          name="apellido"
-                          value={surname}
-                          onChange={(e: any) => setSurname(e.target.value)}
-                          placeholder="Apellido"
-                          required
-                        />
-                      </div>
-                      <div className="relative form-group lg:w-1/2 w-full py-2 px-2 cursor-pointer">
-                        <div
-                          className={`absolute top-0 bottom-0 flex items-center right-5 pointer-events-none`}
-                        >
-                          <IoIosArrowDown
-                            style={{
-                              color: brandDetails?.color_boton_formulario,
-                            }}
-                          />
-                        </div>
-                        <select
-                          className="form-control cursor-pointer"
-                          id="pais-interes"
-                          name="pais"
-                          value={country}
-                          onChange={handleCountryChange}
-                        >
-                          <option value="" disabled>
-                            País de Interés
-                          </option>
-                          {countries.map((country) => (
-                            <option value={country.name} key={country.code}>
-                              {country.name}
-                            </option>
-                          ))}
-                        </select>
-                      </div>
-
-                      <div className="relative form-group lg:w-1/2 w-full py-2 px-2 cursor-pointer">
-                        <div
-                          className={`absolute top-0 bottom-0 flex items-center right-5 pointer-events-none`}
-                        >
-                          <IoIosArrowDown
-                            style={{
-                              color: brandDetails?.color_boton_formulario,
-                            }}
-                          />
-                        </div>
-                        <select
-                          className="form-control cursor-pointer"
-                          id="province"
-                          name="province"
-                          value={province}
-                          onChange={(e: any) => setProvince(e.target.value)}
-                        >
-                          <option value="" disabled selected>
-                            Provincia de Interés
-                          </option>
-                          {ubications?.map((ubication) => (
-                            <option value={ubication.nombre} key={ubication.id}>
-                              {ubication.nombre}
-                            </option>
-                          ))}
-                        </select>
-                      </div>
-                      <div className="form-group lg:w-1/2 w-full py-2 px-2 relative">
-                        <div className="flex items-center border rounded-lg overflow-hidden">
-                          <div className="flex items-center px-3 border-r">
-                            <img src={flag} alt={`${country} Flag`} className="w-6 h-4 mr-2" />
-                            <span className="text-700 font-medium">{phoneCode}</span>
-                          </div>
-                          <input
-                            type="text"
-                            className="form-control flex-1 pl-2"
-                            name="telefono"
-                            value={phone}
-                            onChange={handlePhoneChange}
-                            placeholder="Teléfono celular"
-                            required
-                          />
-                        </div>
-                      </div>
-                      <div className="form-group lg:w-1/2 w-full py-2 px-2">
-                        <input
-                          type="email"
-                          className="form-control"
-                          name="email"
-                          value={email}
-                          onChange={(e: any) => setEmail(e.target.value)}
-                          id="InputEmail1"
-                          placeholder="Correo electrónico"
-                          required
-                        />
-                      </div>
-                    </div>
-                    <div className="form-group py-2 px-2">
-                      <textarea
+              <p
+                style={{ fontFamily: "Mukata Mahee Bold" }}
+                className="text-[35px] py-[16.25px] text-center"
+              >
+                CONTÁCTANOS
+              </p>
+            </div>
+            <div className="flex justify-center">
+              <div className="lg:w-[60%] w-[90%]">
+                <form onSubmit={handleSubmit}>
+                  <div className="flex lg:flex-wrap lg:flex-row flex-col">
+                    <div className="form-group lg:w-1/2 w-full py-2 px-2">
+                      <input
+                        type="text"
                         className="form-control"
-                        name="comentarios"
-                        value={message}
-                        onChange={(e: any) => setMessage(e.target.value)}
+                        name="nombre"
+                        value={name}
+                        onChange={(e: any) => setName(e.target.value)}
+                        placeholder="Nombre"
                         required
-                        id="exampleFormControlTextarea1"
-                        placeholder="Comentarios"
-                        rows={3}
-                      ></textarea>
+                      />
                     </div>
-                    <input
-                      id="nombremarca"
-                      name="nombremarca"
-                      type="hidden"
-                      value={brand}
-                      onChange={(e: any) => setBrand(brandDetails?.nombre || "")}
-                    />
-                    <div className="flex justify-center py-12 mb-10">
-                      <button
-                        onClick={() => setBrand(brandDetails?.nombre || "")}
-                        type="submit"
-                        style={{
-                          backgroundColor: brandDetails?.color_boton_formulario,
-                        }}
-                        className="text-white px-10 rounded-lg py-2 text-lg"
+                    <div className="form-group lg:w-1/2 w-full py-2 px-2">
+                      <input
+                        type="text"
+                        className="form-control"
+                        name="apellido"
+                        value={surname}
+                        onChange={(e: any) => setSurname(e.target.value)}
+                        placeholder="Apellido"
+                        required
+                      />
+                    </div>
+
+                    {/* País de Interés (Ahora ocupa toda la fila) */}
+                    <div className="relative form-group w-full py-2 px-2 cursor-pointer">
+                      <div
+                        className={`absolute top-0 bottom-0 flex items-center right-5 pointer-events-none`}
                       >
-                        Enviar
-                      </button>
+                        <IoIosArrowDown
+                          style={{
+                            color: brandDetails?.color_boton_formulario,
+                          }}
+                        />
+                      </div>
+                      <select
+                        className="form-control cursor-pointer w-full"
+                        id="pais-interes"
+                        name="pais"
+                        value={country}
+                        onChange={handleCountryChange}
+                      >
+                        <option value="" disabled>
+                          País de Interés
+                        </option>
+                        {countries.map((country) => (
+                          <option value={country.name} key={country.code}>
+                            {country.name}
+                          </option>
+                        ))}
+                      </select>
                     </div>
-                  </form>
-                </div>
+
+                    {/* Comentado - No borrar */}
+                    {/*
+                    <div className="relative form-group lg:w-1/2 w-full py-2 px-2 cursor-pointer">
+                      <div
+                        className={`absolute top-0 bottom-0 flex items-center right-5 pointer-events-none`}
+                      >
+                        <IoIosArrowDown
+                          style={{
+                            color: brandDetails?.color_boton_formulario,
+                          }}
+                        />
+                      </div>
+                      <select
+                        className="form-control cursor-pointer"
+                        id="province"
+                        name="province"
+                        value={province}
+                        onChange={(e: any) => setProvince(e.target.value)}
+                      >
+                        <option value="" disabled selected>
+                          Provincia de Interés
+                        </option>
+                        {ubications?.map((ubication) => (
+                          <option value={ubication.nombre} key={ubication.id}>
+                            {ubication.nombre}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+                    */}
+
+                    {/* Campo de teléfono con bandera e indicativo de país (Aparece una vez al lado de la bandera) */}
+                    <div className="form-group lg:w-1/2 w-full py-2 px-2 relative">
+                      <div className="flex items-center border rounded-lg overflow-hidden">
+                        <div className="flex items-center px-3 border-r">
+                          <img src={flag} alt={`${country} Flag`} className="w-6 h-4 mr-2" />
+                          <span className="text-700 font-medium">{phoneCode}</span>
+                        </div>
+                        <input
+                          type="text"
+                          className="form-control flex-1 pl-2"
+                          name="telefono"
+                          value={phone}
+                          onChange={handlePhoneChange}
+                          placeholder="Teléfono celular"
+                          required
+                        />
+                      </div>
+                    </div>
+
+                    <div className="form-group lg:w-1/2 w-full py-2 px-2">
+                      <input
+                        type="email"
+                        className="form-control"
+                        name="email"
+                        value={email}
+                        onChange={(e: any) => setEmail(e.target.value)}
+                        id="InputEmail1"
+                        placeholder="Correo electrónico"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div className="form-group py-2 px-2">
+                    <textarea
+                      className="form-control"
+                      name="comentarios"
+                      value={message}
+                      onChange={(e: any) => setMessage(e.target.value)}
+                      required
+                      id="exampleFormControlTextarea1"
+                      placeholder="Comentarios"
+                      rows={3}
+                    ></textarea>
+                  </div>
+                  <input
+                    id="nombremarca"
+                    name="nombremarca"
+                    type="hidden"
+                    value={brand}
+                    onChange={(e: any) => setBrand(brandDetails?.nombre || "")}
+                  />
+                  <div className="flex justify-center py-12 mb-10">
+                    <button
+                      onClick={() => setBrand(brandDetails?.nombre || "")}
+                      type="submit"
+                      style={{
+                        backgroundColor: brandDetails?.color_boton_formulario,
+                      }}
+                      className="text-white px-10 rounded-lg py-2 text-lg"
+                    >
+                      Enviar
+                    </button>
+                  </div>
+                </form>
               </div>
+            </div>
+
             </div>
           </section>
         </>

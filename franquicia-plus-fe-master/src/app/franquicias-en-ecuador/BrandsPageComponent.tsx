@@ -16,7 +16,7 @@ import MarcaCard from "@/components/Marca/MarcaCard";
 import BrandsFilter from "@/components/BrandsFilter";
 import { CgSpinnerTwoAlt } from "react-icons/cg";
 
-interface Props {
+interface props {
   category: Sector[];
   ubication: Sector[];
   investment: Inversion[];
@@ -30,13 +30,20 @@ const BrandsPageComponent = ({
   investment,
   directory,
   state,
-}: Props) => {
+}: props) => {
+  const directorios = directory;
+  const estado = state;
+  const ubicacion = ubication;
+  const categoria = category;
+  const inversion = investment;
   const [marcas, setMarcas] = useState<Marcas>();
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedUbication, setSelectedUbication] = useState("");
   const [selectedInversion, setSelectedInversion] = useState("");
-  const [selectedPrecioMin, setSelectedPrecioMin] = useState("");
-  const [selectedPrecioMax, setSelectedPrecioMax] = useState("");
+  const [selectedPrecioMin,setSelectedPrecioMin]=useState("");
+  const [selectedPrecioMax,setSelectedPrecioMax]=useState("")
+  const [, setSelectedState] = useState("");
+  const [, setSelectedDirectory] = useState("");
   const [charge, setCharge] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
@@ -47,86 +54,121 @@ const BrandsPageComponent = ({
   useEffect(() => {
     const timeout = setTimeout(() => {
       setCharge(false);
-    }, 2000);
+    }, 2000); // Set timeout to 3 seconds (3000 milliseconds)
 
-    return () => clearTimeout(timeout);
-  }, []);
+    return () => clearTimeout(timeout); // Clear timeout on unmount
+  }, [charge]);
 
   const getMarcas = async () => {
     const estado = searchParams.get("estado");
+    if (estado) {
+      setSelectedState(estado);
+    }
     const directorio = searchParams.get("directorio");
+    if (directorio) {
+      setSelectedDirectory(directorio);
+    }
     const categoria = searchParams.get("categoria");
+    if (categoria) {
+      setSelectedCategory(categoria);
+    }
     const ubicacion = searchParams.get("ubicacion");
+    if (ubicacion) {
+      setSelectedUbication(ubicacion);
+    }
+    //const inversion = searchParams.get("inversion");
+    //if (inversion) {
+     // setSelectedInversion(inversion);
+    //}
+
     const precio_min_sel = searchParams.get("precio__gte");
+    if (precio_min_sel) {
+      setSelectedPrecioMin(precio_min_sel);
+    }
     const precio_max_sel = searchParams.get("precio__lte");
+    if (precio_max_sel) {
+      setSelectedPrecioMax(precio_max_sel);
+    }
+    console.log(precio_max_sel,precio_min_sel)
 
-    setSelectedUbication(ubicacion || "");
-    setSelectedCategory(categoria || "");
-    setSelectedPrecioMin(precio_min_sel || "");
-    setSelectedPrecioMax(precio_max_sel || "");
-
-    try {
-      const response = await axios.get(`/api/v1/marcas/`, {
+    await axios
+      .get(`/api/v1/marcas/`, {
         params: {
           page_size: brandsPerPage,
           categoria__nombre: categoria,
           ubicacion__nombre: ubicacion,
+          //inversion__nombre_url: inversion,
           estado__nombre: estado,
           directorio__nombre: directorio,
-          precio__gte: precio_min_sel,
-          precio__lte: precio_max_sel,
+          precio__gte:precio_min_sel,
+          precio__lte:precio_max_sel
         },
+      })
+      .then((response) => {
+        setMarcas(response.data);
+        console.log(response.data);
+        setTotalPages(response.data.total_pages);
+      })
+      .catch((error) => {
+        console.log(error);
       });
-      setMarcas(response.data);
-      setTotalPages(response.data.total_pages);
-    } catch (error) {
-      console.log(error);
-      // Aquí podrías agregar lógica para mostrar un mensaje de error en la UI
-    }
   };
 
   useEffect(() => {
     setCharge(true);
     getMarcas();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchParams]);
 
   const newPage = async (page: number) => {
-    try {
-      const response = await axios.get(`/api/v1/marcas/`, {
+    await axios
+      .get(`/api/v1/marcas/`, {
         params: {
           page_size: brandsPerPage,
           page: page,
           categoria__nombre: selectedCategory,
           ubicacion__nombre: selectedUbication,
-          precio__gte: selectedPrecioMin,
-          precio__lte: selectedPrecioMax,
+          //inversion__nombre: selectedInversion,
+          precio__gte:precio_min_sel,
+          precio__lte:precio_max_sel
         },
+      })
+      .then((response) => {
+        setMarcas(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
       });
-      setMarcas(response.data);
-    } catch (error) {
-      console.log(error);
-    }
   };
 
   useEffect(() => {
     let sectors = "";
-    if (selectedCategory || selectedUbication || selectedPrecioMax || selectedPrecioMin) {
+    // if (selectedCategory || selectedUbication || selectedInversion )
+    if (selectedCategory || selectedUbication || selectedPrecioMax || selectedPrecioMin ) {
       sectors += "?";
 
-      if (selectedCategory) sectors += `categoria=${encodeURIComponent(selectedCategory)}&`;
-      if (selectedUbication) sectors += `ubicacion=${encodeURIComponent(selectedUbication)}&`;
-      if (selectedPrecioMin) sectors += `precio__gte=${encodeURIComponent(selectedPrecioMin)}&`;
-      if (selectedPrecioMax) sectors += `precio__lte=${encodeURIComponent(selectedPrecioMax)}&`;
-
+      if (selectedCategory)
+        sectors += `categoria=${encodeURIComponent(selectedCategory)}&`;
+      if (selectedUbication)
+        sectors += `ubicacion=${encodeURIComponent(selectedUbication)}&`;
+      if (selectedPrecioMin)
+        sectors += `precio__gte=${encodeURIComponent(selectedPrecioMin)}&`;
+      if (selectedPrecioMax)
+        sectors += `precio__lte=${encodeURIComponent(selectedPrecioMax)}&`;
+     // if (selectedInversion)
+       // sectors += `inversion=${encodeURIComponent(selectedInversion)}&`;
+      // Remove the trailing '&' character
       sectors = sectors.slice(0, -1);
     }
 
     const targetUrl = `/franquicias-en-ecuador${sectors}`;
     router.push(targetUrl);
-  }, [selectedCategory, selectedUbication, selectedPrecioMax, selectedPrecioMin]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selectedCategory, selectedInversion, selectedUbication,selectedPrecioMax,selectedPrecioMin]);
 
   useEffect(() => {
     getMarcas();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -198,11 +240,11 @@ const BrandsPageComponent = ({
             setSelectedUbication={setSelectedUbication}
             selectedInversion={selectedInversion}
             setSelectedInversion={setSelectedInversion}
-            directorios={directory}
-            estados={state}
-            ubicacion={ubication}
-            categoria={category}
-            inversion={investment}
+            directorios={directorios}
+            estados={estado}
+            ubicacion={ubicacion}
+            categoria={categoria}
+            inversion={inversion}
           />
           <div className="flex w-full justify-center px-4">
             {charge ? (
@@ -229,30 +271,57 @@ const BrandsPageComponent = ({
       </section>
       <section>
         {totalPages > 1 && !charge && (
-          <div className="w-full flex lg:justify-end justify-center mt-6">
-            <div className="flex justify-between">
-              <button
+          <div className="w-full flex lg:justify-end justify-center">
+            <div className="flex justify-center lg:w-[70vw] items-center py-4 gap-4">
+              <div
                 onClick={() => {
-                  if (currentPage > 1) {
-                    setCurrentPage((prev) => prev - 1);
-                    newPage(currentPage - 1);
-                  }
+                  setCurrentPage((prev) => Math.max(prev - 1, 1));
+                  newPage(Math.max(currentPage - 1, 1));
+                  const banner = document.getElementById("banner");
+                  banner?.scrollIntoView({ block: "end", behavior: "smooth" });
                 }}
-                className="flex items-center justify-center w-10 h-10 rounded-full border border-[#FA5E4D] text-[#FA5E4D] hover:bg-[#FA5E4D] hover:text-white duration-300"
+                className={`text-5xl w-12 aspect-square flex justify-center items-center ${
+                  currentPage === 1
+                    ? "text-transparent"
+                    : "rounded-full text-[#fa5e4d] hover:bg-slate-200 cursor-pointer"
+                }`}
               >
                 <IoIosArrowBack />
-              </button>
-              <div className="flex items-center text-[#FA5E4D] mx-4">
-                {currentPage} de {totalPages}
               </div>
+              {Array.from({ length: totalPages }).map((_, index) => (
+                <div key={index}>
+                  <button
+                    onClick={() => {
+                      setCurrentPage(index + 1);
+                      newPage(index + 1);
+                      const banner = document.getElementById("banner");
+                      banner?.scrollIntoView({
+                        block: "end",
+                        behavior: "smooth",
+                      });
+                    }}
+                    className={` relative flex justify-center items-center border text-2xl w-12 aspect-square rounded-full cursor-pointer ${
+                      currentPage === index + 1
+                        ? "bg-[#fa5e4d] text-white"
+                        : "hover:bg-slate-200"
+                    }`}
+                  >
+                    {index + 1}
+                  </button>
+                </div>
+              ))}
               <button
                 onClick={() => {
-                  if (currentPage < totalPages) {
-                    setCurrentPage((prev) => prev + 1);
-                    newPage(currentPage + 1);
-                  }
+                  setCurrentPage((prev) => Math.min(prev + 1, totalPages));
+                  newPage(Math.min(currentPage + 1, totalPages));
+                  const banner = document.getElementById("banner");
+                  banner?.scrollIntoView({ block: "end", behavior: "smooth" });
                 }}
-                className="flex items-center justify-center w-10 h-10 rounded-full border border-[#FA5E4D] text-[#FA5E4D] hover:bg-[#FA5E4D] hover:text-white duration-300"
+                className={`text-5xl w-12 aspect-square flex justify-center items-center ${
+                  currentPage === totalPages
+                    ? "text-transparent"
+                    : "rounded-full text-[#fa5e4d] hover:bg-slate-200 cursor-pointer"
+                }`}
               >
                 <IoIosArrowForward />
               </button>
@@ -260,7 +329,13 @@ const BrandsPageComponent = ({
           </div>
         )}
       </section>
-      <Footer />
+      <section>
+        <PublicityComponent />
+      </section>
+
+      <section>
+        <Footer />
+      </section>
       <ChatBot />
     </>
   );

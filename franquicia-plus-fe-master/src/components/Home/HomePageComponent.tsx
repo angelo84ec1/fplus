@@ -117,8 +117,8 @@ const HomePageComponent = ({ popularBrands, newBrands }: props) => {
                         onChange={() => handleCategoryChange(category.value)}
                         key={category.id}
                         className={`${selectedCategory === category.value
-                          ? "text-[#CC4B3D]"
-                          : "text-[#0d132f]"
+                            ? "text-[#CC4B3D]"
+                            : "text-[#0d132f]"
                           } opcion flex  hover:text-[#CC4B3D]`}
                       >
                         <label
@@ -154,7 +154,7 @@ const HomePageComponent = ({ popularBrands, newBrands }: props) => {
             </div>
           </div>
         </section>
-        <section className="h-[15em] sm:h-[20em] md:h-[35.2em]  flex items-center bg-[#FFFFFF] w-full">
+        <section className="h-[24.5em] flex items-center bg-[#CC4B3D] w-full">
           <a href=" https://experiencia.escala.com/escala-franquiciaplus" target="_blank" rel="noopener noreferrer">
             <video className="images" loop autoPlay preload="auto" muted playsInline>
               <source type="video/mp4" src="/video.mp4" />

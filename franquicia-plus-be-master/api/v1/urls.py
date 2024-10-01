@@ -1,7 +1,7 @@
 from django.urls import path
 from rest_framework import routers
 from api.v1.marca.views import DirectorioViewSet, EstadoViewSet, InversionViewSet, MarcaViewSet, CategoriaViewSet, UbicacionViewSet, DetalleMarcaViewSet
-
+from rest_framework.permissions import AllowAny
 router = routers.SimpleRouter()
 router.register(r'marcas', MarcaViewSet, basename="marcas")
 router.register(r'categoria', CategoriaViewSet, basename="categoria")

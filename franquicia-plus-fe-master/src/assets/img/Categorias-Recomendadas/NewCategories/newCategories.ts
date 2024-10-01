@@ -1,6 +1,6 @@
 import Belleza from "./Belleza.png";
 import Coaching from "./Coaching.png";
-import Educación from "./Educacion.png";
+import Educación from "./Educación.png";
 import Farmacias from "./Farmacias.png";
 import Restaurantes from "./Restaurantes.png";
 import Tiendas from "./Tiendas.png";

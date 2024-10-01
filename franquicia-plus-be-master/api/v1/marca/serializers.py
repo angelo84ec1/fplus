@@ -42,6 +42,7 @@ class MarcaSerializer(serializers.ModelSerializer):
         depth = 1
 
 
+
 class CategoriaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Categoria

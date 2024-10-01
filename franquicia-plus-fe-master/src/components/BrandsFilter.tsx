@@ -67,7 +67,7 @@ const BrandsFilter = ({
             className="sector-select"
             name="ubication"
           >
-            <option value="">Ubicación</option>
+            <option value="">País</option>
             {ubicacion.map((ubi, index) => (
               <option key={index} value={ubi.nombre}>
                 {ubi.nombre}
@@ -88,7 +88,7 @@ const BrandsFilter = ({
               style={{ boxShadow: "3px 10px 20px rgb(0 0 0 / 40%)" }}
               className="flex flex-col gap-1 text-sm bg-white rounded-br-2xl z-[1] overflow-hidden border"
             >
-              {/* Opción "Todas" para revertir el filtro */}
+
               <Link
                 className="no-underline text-black hover:text-[#fa5e4d]"
                 onClick={() => setSelectedEstado("Todas")}
@@ -97,7 +97,7 @@ const BrandsFilter = ({
                 Todas
               </Link>
 
-              {/* Mapeo de las opciones de estados */}
+
               {estados.map((estado) => (
                 <Link
                   className="no-underline text-black hover:text-[#fa5e4d]"
